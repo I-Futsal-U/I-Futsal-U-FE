@@ -1,5 +1,6 @@
-import ReactQuery from "@/components/provider/ReactQuery";
 import "./globals.css";
+
+import ReactQuery from "@/components/provider/ReactQuery";
 
 export const metadata = {
   title: "I·Futsal·U",
