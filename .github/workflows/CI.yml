@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node-version: [16.x, 18.x, 20.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-          registry-url: "https://registry.yarnpkg.com"
+          # registry-url: "https://registry.yarnpkg.com"
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn test
