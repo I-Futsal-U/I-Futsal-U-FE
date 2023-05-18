@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch --passWithNoTests"
+    "test": "jest --passWithNoTests --watch --coverage",
+    "ci": "jest --passWithNoTests --watch --coverage --forceExit"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^13.4.2",
