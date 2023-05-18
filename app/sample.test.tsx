@@ -17,7 +17,7 @@ describe("sample Test", () => {
     expect(text).toBeInTheDocument();
   });
 
-  test("Test function", () => {
+  test("Test Sample function", () => {
     expect(sampleFunction(1, 2)).toBe(3);
   });
 });

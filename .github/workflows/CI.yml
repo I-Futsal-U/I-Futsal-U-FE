@@ -23,4 +23,4 @@ jobs:
           # registry-url: "https://registry.yarnpkg.com"
       - run: yarn install --frozen-lockfile
       - run: yarn build
-      - run: yarn test
+      - run: yarn ci
