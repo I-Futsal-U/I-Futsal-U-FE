@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import Header from "@/components/layout/Header/Header";
 import ReactQuery from "@/components/provider/ReactQuery";
 
 export const metadata = {
@@ -15,10 +14,7 @@ export default function RootLayout({
   return (
     <html lang="ko-KR">
       <body>
-        <ReactQuery>
-          <Header />
-          {children}
-        </ReactQuery>
+        <ReactQuery>{children}</ReactQuery>
       </body>
     </html>
   );
