@@ -1,6 +1,10 @@
 import "./globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 import ReactQuery from "@/components/provider/ReactQuery";
+config.autoAddCss = false;
 
 export const metadata = {
   title: "I·Futsal·U",
