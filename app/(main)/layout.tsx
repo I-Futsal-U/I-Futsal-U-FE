@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      {children}
+      <main className="w-screen mt-20">{children}</main>
     </>
   );
 }
