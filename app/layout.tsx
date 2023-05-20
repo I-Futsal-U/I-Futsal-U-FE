@@ -1,5 +1,4 @@
-import "./globals.css";
-
+import "../styles/globals.css";
 import ReactQuery from "@/components/provider/ReactQuery";
 
 export const metadata = {
