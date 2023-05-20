@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch --coverage"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^13.4.2",
