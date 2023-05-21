@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import MainItem from "./MainItem";
 
-function MainFieldCarousel() {
+function MainCarousel() {
   const navigationNextRef = useRef<HTMLButtonElement | null>(null);
   const navigationPrevRef = useRef<HTMLButtonElement | null>(null);
 
@@ -62,4 +62,4 @@ function MainFieldCarousel() {
   );
 }
 
-export default MainFieldCarousel;
+export default MainCarousel;
