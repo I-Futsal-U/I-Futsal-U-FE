@@ -19,7 +19,7 @@ export default function HeaderInputBar() {
     const newInput = input;
     queryClient.setQueryData(["inputValue"], newInput);
     setInput("");
-    router.push("/map");
+    router.push("/searchpage");
   };
 
   return (
