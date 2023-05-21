@@ -10,10 +10,10 @@ export default function HeaderLogo() {
   const router = useRouter();
 
   // 뷰포트사이즈 감지 이벤트핸들러
-  const [viewportWidth, setViewportWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0,
-  );
+  const [viewportWidth, setViewportWidth] = useState(0);
   useEffect(() => {
+    setViewportWidth(window.innerWidth);
+
     function handleViewportChange() {
       setViewportWidth(window.innerWidth);
     }
