@@ -24,7 +24,7 @@ function MainCarousel() {
         <Swiper
           className="w-full h-full"
           slidesPerView={1}
-          // autoplay={{ delay: 2000, disableOnInteraction: false }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
           loop
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -39,10 +39,7 @@ function MainCarousel() {
               data-testid={texts[i]}
               key={e}
             >
-              <h2 className="absolute top-1/2 w-full text-center -translate-y-1/2 text-stone-50">
-                {texts[i]}
-              </h2>
-              <MainItem icon={icons[i]} />
+              <MainItem icon={icons[i]} text={texts[i]} />
             </SwiperSlide>
           ))}
         </Swiper>
