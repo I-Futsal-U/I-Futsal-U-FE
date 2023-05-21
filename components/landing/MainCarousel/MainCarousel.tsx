@@ -24,7 +24,7 @@ function MainCarousel() {
         <Swiper
           className="w-full h-full"
           slidesPerView={1}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          // autoplay={{ delay: 2000, disableOnInteraction: false }}
           loop
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -36,6 +36,7 @@ function MainCarousel() {
           {bgColors.map((e, i) => (
             <SwiperSlide
               className={`rounded-2xl text-xl sm:text-3xl md:text-5xl font-bold ${e}`}
+              data-testid={texts[i]}
               key={e}
             >
               <h2 className="absolute top-1/2 w-full text-center -translate-y-1/2 text-stone-50">
@@ -47,12 +48,14 @@ function MainCarousel() {
         </Swiper>
         <button
           ref={navigationPrevRef}
+          data-testid="prevBtn"
           className="hidden lg:block absolute top-1/2 -left-12 -translate-y-1/2 bg-gray-400/50 w-10 h-10 rounded-full z-10"
         >
           <FaAngleLeft className="text-3xl text-stone-50 pl-1.5" />
         </button>
         <button
           ref={navigationNextRef}
+          data-testid="nextBtn"
           className="hidden lg:block absolute top-1/2 -right-12 -translate-y-1/2 bg-gray-400/50 w-10 h-10 rounded-full z-10"
         >
           <FaAngleRight className="text-3xl text-stone-50 pl-3" />
