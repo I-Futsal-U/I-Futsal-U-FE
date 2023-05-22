@@ -1,12 +1,11 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import Map from "@/components/common/Map";
 
 export default function page() {
   return (
-    <div>
-      <button></button>
-    </div>
+    <>
+      <Map />
+    </>
   );
 }
