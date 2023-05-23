@@ -9,15 +9,24 @@ export default function HeaderLogo() {
   const router = useRouter();
 
   // 뷰포트사이즈 감지 이벤트핸들러
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState(0);
+
   useEffect(() => {
     function handleViewportChange() {
       setViewportWidth(window.innerWidth);
     }
-    window.addEventListener("resize", handleViewportChange);
+
+    if (typeof window !== "undefined") {
+      // 클라이언트 사이드에서만 코드 실행
+      setViewportWidth(window.innerWidth);
+      window.addEventListener("resize", handleViewportChange);
+    }
+
     // 컴포넌트 언마운트 시 이벤트 핸들러 제거
     return () => {
-      window.removeEventListener("resize", handleViewportChange);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleViewportChange);
+      }
     };
   }, []);
 
