@@ -1,5 +1,5 @@
 "use client";
-import "swiper/css";
+import "swiper/swiper.min.css";
 
 import { useRef } from "react";
 import type { IconType } from "react-icons";
@@ -19,7 +19,7 @@ function MainCarousel() {
   const texts = ["우리 모두 페어플레이해요!", "주변 풋살장을 찾아보세요."];
 
   return (
-    <div className="w-screen h-52 sm:h-64 md:h-96 bg-gray-200 py-5">
+    <section className="w-screen h-52 sm:h-64 md:h-96 bg-gray-200 py-5">
       <div className="relative max-w-4xl h-full mx-auto">
         <Swiper
           className="w-full h-full"
@@ -29,6 +29,27 @@ function MainCarousel() {
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
+          }}
+          onSwiper={(swiper) => {
+            // Delay execution for the refs to be defined
+            setTimeout(() => {
+              // Override prevEl & nextEl now that refs are defined
+              if (swiper.navigation) {
+                if (
+                  typeof swiper.params.navigation !== "boolean" &&
+                  swiper.params.navigation
+                ) {
+                  swiper.params.navigation.prevEl = navigationPrevRef.current;
+                  swiper.params.navigation.nextEl = navigationNextRef.current;
+                }
+              }
+              // Re-init navigation
+              if (swiper.navigation) {
+                swiper.navigation.destroy();
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            });
           }}
           speed={700}
           modules={[Autoplay, Navigation]}
@@ -58,7 +79,7 @@ function MainCarousel() {
           <FaAngleRight className="text-3xl text-stone-50 pl-3" />
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 
