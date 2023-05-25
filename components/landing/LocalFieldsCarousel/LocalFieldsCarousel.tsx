@@ -1,6 +1,5 @@
 "use client";
 import "swiper/swiper.min.css";
-import "swiper/css/navigation";
 
 import { useEffect, useRef, useState } from "react";
 import type { IconType } from "react-icons";
@@ -24,7 +23,7 @@ function LocalFieldsCarousel() {
   const navigationNextRef = useRef<HTMLButtonElement | null>(null);
 
   return (
-    <section id="localFields" className="w-screen h-96 py-8 text-ali">
+    <section id="localFields" className="w-screen h-96 py-8">
       <div className="w-5/6 h-full p-4 border-2 border-solid border-gray-800 rounded-xl m-auto">
         <h2 className="font-black text-xl mb-5">내 주변 풋살장</h2>
         {!loading && (
@@ -84,7 +83,7 @@ function LocalFieldsCarousel() {
               modules={[Navigation]}
             >
               {items.map((e) => (
-                <SwiperSlide key={e.id}>
+                <SwiperSlide key={e.id} aria-label="carousel slide">
                   <LocalFieldsItem
                     fieldName={e.name}
                     img={e.img}

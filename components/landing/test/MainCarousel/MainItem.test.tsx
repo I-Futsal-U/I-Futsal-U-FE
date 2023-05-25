@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import MainItem from "../../MainCarousel/MainItem";
 
 describe("MainItem test", () => {
-  test("react", () => {
+  test("MainItem 렌더링 테스트", () => {
     const iconMock = () => <span data-testid="icon-mock" />;
     render(<MainItem icon={iconMock} text="테스트" />);
 
