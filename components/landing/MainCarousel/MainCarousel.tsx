@@ -19,7 +19,7 @@ function MainCarousel() {
   const texts = ["우리 모두 페어플레이해요!", "주변 풋살장을 찾아보세요."];
 
   return (
-    <section className="w-screen h-52 sm:h-64 md:h-96 bg-gray-200 py-5">
+    <section className="w-screen h-52 sm:h-64 md:h-96 bg-gray-200 py-5 px-4 lg:px-0">
       <div className="relative max-w-4xl h-full mx-auto">
         <Swiper
           className="w-full h-full"

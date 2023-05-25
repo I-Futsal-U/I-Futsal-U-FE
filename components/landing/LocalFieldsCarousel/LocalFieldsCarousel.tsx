@@ -2,7 +2,6 @@
 import "swiper/swiper.min.css";
 
 import { useEffect, useRef, useState } from "react";
-import type { IconType } from "react-icons";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,7 +22,7 @@ function LocalFieldsCarousel() {
   const navigationNextRef = useRef<HTMLButtonElement | null>(null);
 
   return (
-    <section id="localFields" className="w-screen h-96 py-8">
+    <section id="localFields" className="max-w-7xl w-screen h-96 py-8 mx-auto">
       <div className="w-5/6 h-full p-4 border-2 border-solid border-gray-800 rounded-xl m-auto">
         <h2 className="font-black text-xl mb-5">내 주변 풋살장</h2>
         {!loading && (
@@ -76,7 +75,7 @@ function LocalFieldsCarousel() {
                   spaceBetween: 40,
                 },
                 1536: {
-                  slidesPerView: 5,
+                  slidesPerView: 4,
                   spaceBetween: 50,
                 },
               }}
