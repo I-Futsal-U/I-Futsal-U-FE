@@ -17,10 +17,18 @@ export default function HeaderLogo() {
     function handleViewportChange() {
       setViewportWidth(window.innerWidth);
     }
-    window.addEventListener("resize", handleViewportChange);
+
+    if (typeof window !== "undefined") {
+      // 클라이언트 사이드에서만 코드 실행
+      setViewportWidth(window.innerWidth);
+      window.addEventListener("resize", handleViewportChange);
+    }
+
     // 컴포넌트 언마운트 시 이벤트 핸들러 제거
     return () => {
-      window.removeEventListener("resize", handleViewportChange);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleViewportChange);
+      }
     };
   }, []);
 
