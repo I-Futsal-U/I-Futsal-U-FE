@@ -1,3 +1,37 @@
 @tailwind base;
+
+:root {
+  --scrollbar: #e1eceb;
+  --scrollbar-thumb: cornflowerblue;
+}
+
+/** FireFox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar) var(--scrollbar-thumb);
+}
+
+/** Chrome */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 14px;
+  border: 2px solid var(--scrollbar);
+}
+
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply overflow-x-hidden;
+  }
+}
