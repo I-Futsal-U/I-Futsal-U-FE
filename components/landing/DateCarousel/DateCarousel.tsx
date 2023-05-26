@@ -26,7 +26,7 @@ function DateCarousel() {
   const navigationPrevRef = useRef<HTMLButtonElement | null>(null);
   SwiperCore.use([Navigation]);
   return (
-    <section className="max-w-7xl w-screen h-38 my-0 mx-auto">
+    <div className="max-w-7xl w-screen h-38 my-0 mx-auto">
       <div className="w-5/6 h-full p-4 m-auto">
         {!loading && (
           <div
@@ -107,7 +107,7 @@ function DateCarousel() {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 }
 
