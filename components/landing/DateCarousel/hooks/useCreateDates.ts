@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 // date.getMonth() - 이번달 (0 ~ 11)
 // date.getDay() - 오늘 요일 (0 ~ 6)
 
-type MONTH_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
-type DAY_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type MONTH_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
+export type DAY_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export type TodayType = {
   month: MONTH_TYPE;

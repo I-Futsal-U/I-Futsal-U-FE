@@ -26,10 +26,16 @@ function LocalFieldsCarousel() {
       <div className="w-5/6 h-full p-4 border-2 border-solid border-gray-800 rounded-xl m-auto">
         <h2 className="font-black text-xl mb-5">내 주변 풋살장</h2>
         {!loading && (
-          <div className="relative w-11/12 h-4/5 mx-auto bg-gray-100 opacity-60 rounded-2xl" />
+          <div
+            className="relative w-11/12 h-4/5 mx-auto bg-gray-100 opacity-60 rounded-2xl"
+            aria-label="when loading is false"
+          />
         )}
         {loading && (
-          <div className="relative  w-11/12 h-4/5 mx-auto">
+          <div
+            className="relative  w-11/12 h-4/5 mx-auto"
+            aria-label="when loading is true"
+          >
             <Swiper
               className="w-full h-full"
               slidesPerView={1}

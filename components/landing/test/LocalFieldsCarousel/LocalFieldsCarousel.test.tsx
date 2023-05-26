@@ -1,9 +1,30 @@
 import { getByLabelText, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import React, { useState } from "react";
 
 import LocalFieldsCarousel from "../../LocalFieldsCarousel/LocalFieldsCarousel";
 
 describe("LocalFieldsCarousel test", () => {
+  test("로딩중일 떄 Swiper가 렌더링 되지 않는다.", () => {
+    const setStateMock = jest.fn();
+    const useStateMock: any = (initialState: any) => [false, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+
+    render(<LocalFieldsCarousel />);
+
+    const LoadingDiv = screen.getByLabelText("when loading is false");
+    expect(LoadingDiv).toBeInTheDocument();
+  });
+  test("로딩중이 끝나면 Swiper가 렌더링 된다.", () => {
+    const setStateMock = jest.fn();
+    const useStateMock: any = (initialState: any) => [true, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+
+    render(<LocalFieldsCarousel />);
+
+    const LoadedDiv = screen.getByLabelText("when loading is true");
+    expect(LoadedDiv).toBeInTheDocument();
+  });
   test("Swiper Slide가 렌더링된다.", () => {
     render(<LocalFieldsCarousel />);
     const slides = screen.getAllByLabelText("carousel slide");

@@ -29,10 +29,16 @@ function DateCarousel() {
     <section className="max-w-7xl w-screen h-38 my-0 mx-auto">
       <div className="w-5/6 h-full p-4 m-auto">
         {!loading && (
-          <div className="relative max-w-5xl h-full mx-auto py-8 bg-gray-100 rounded-2xl" />
+          <div
+            className="relative max-w-5xl h-full mx-auto py-8 bg-gray-100 rounded-2xl"
+            aria-label="when loading is false"
+          />
         )}
         {loading && (
-          <div className="relative max-w-5xl h-full mx-auto py-8">
+          <div
+            className="not-loading relative max-w-5xl h-full mx-auto py-8"
+            aria-label="when loading is true"
+          >
             <Swiper
               className="w-full h-full"
               slidesPerView={3}
