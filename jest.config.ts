@@ -11,6 +11,11 @@ const jestConfig = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleDirectories: ["<rootDir>/node_modules"],
   testEnvironment: "jest-environment-jsdom",
+  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
+  transform: {
+    "^.+\\.[t|j]sx?$": "babel-jest",
+  },
+  transformIgnorePatterns: ["node_modules/(?!swiper|ssr-window|dom7).*/"],
 };
 
 export default createJestConfig(jestConfig);
