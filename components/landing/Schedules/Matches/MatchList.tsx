@@ -2,7 +2,7 @@ import MatchItem from "./MatchItem";
 
 function MatchList() {
   return (
-    <div className="w-5/6 border-solid border-2 mx-auto">
+    <div className="w-5/6 mx-auto">
       <MatchItem />
       <MatchItem />
       <MatchItem />
