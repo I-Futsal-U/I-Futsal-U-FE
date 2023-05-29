@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import Button from "@/components/landing/Schedules/Matches/Button";
 // 기능 완성 후, 작성 예정

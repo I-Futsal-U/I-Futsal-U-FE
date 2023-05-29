@@ -12,7 +12,7 @@ describe("SearchOptions Button test", () => {
   });
   test("button을 클릭하면, useRouter().push(href)가 호출된다.", async () => {
     const user = UserEvent.setup();
-    const pushMock = jest.fn((href: string) => ({}));
+    const pushMock = jest.fn((href: string) => ({ href }));
 
     (useRouter as jest.Mock).mockImplementation(() => ({
       push: (href: string) => pushMock(href),
@@ -27,7 +27,7 @@ describe("SearchOptions Button test", () => {
   });
   test("href에 아무것도 넣지 않으면 버튼 클릭 시, useRouter().push('/')가 호출된다.", async () => {
     const user = UserEvent.setup();
-    const pushMock = jest.fn((href: string) => ({}));
+    const pushMock = jest.fn((href: string) => ({ href }));
 
     (useRouter as jest.Mock).mockImplementation(() => ({
       push: (href: string) => pushMock(href),

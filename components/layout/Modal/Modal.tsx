@@ -1,5 +1,4 @@
 import { useRouter } from "next/navigation";
-
 import { GrClose } from "react-icons/gr";
 
 interface ModalProps {

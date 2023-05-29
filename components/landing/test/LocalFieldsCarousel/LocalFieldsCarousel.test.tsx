@@ -1,14 +1,14 @@
-import { getByLabelText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import React, { useState } from "react";
+import React from "react";
 
 import LocalFieldsCarousel from "../../LocalFieldsCarousel/LocalFieldsCarousel";
 
 describe("LocalFieldsCarousel test", () => {
   test("로딩중일 떄 Swiper가 렌더링 되지 않는다.", () => {
     const setStateMock = jest.fn();
-    const useStateMock: any = (initialState: any) => [false, setStateMock];
-    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+    const useStateMock = () => [false, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock as jest.Mock);
 
     render(<LocalFieldsCarousel />);
 
@@ -17,8 +17,8 @@ describe("LocalFieldsCarousel test", () => {
   });
   test("로딩중이 끝나면 Swiper가 렌더링 된다.", () => {
     const setStateMock = jest.fn();
-    const useStateMock: any = (initialState: any) => [true, setStateMock];
-    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+    const useStateMock = () => [true, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock as jest.Mock);
 
     render(<LocalFieldsCarousel />);
 
