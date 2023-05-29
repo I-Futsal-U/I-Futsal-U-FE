@@ -1,8 +1,8 @@
 import temporarydata from "./temporarydata.json";
-import { useQuery } from "@tanstack/react-query";
+import { QueryCache, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
-import { TbTextWrapDisabled } from "react-icons/tb";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 interface PlaceSearch {
   data: { [key: string]: string }[];
@@ -11,7 +11,13 @@ interface PlaceSearch {
 }
 
 export default function Map() {
-  const { data: inputValue } = useQuery(["inputValue"]);
+  const { data: inputValue } = useQuery({
+    queryKey: ["inputValue"],
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
+  console.log(inputValue);
+
   const [listItems, setListItems] = useState([]);
   const [toggle, setToggle] = useState(true);
   const [listBoxActive, setListBoxActive] = useState(true);
@@ -46,8 +52,8 @@ export default function Map() {
           latlng: new window.kakao.maps.LatLng(item.y, item.x),
         }));
 
+        // 검색관련 객체 및 함수 생성부분입니다.
         const ps = new window.kakao.maps.services.Places();
-
         if (inputValue) {
           ps.keywordSearch(inputValue, placesSearchCB);
         }
@@ -71,6 +77,7 @@ export default function Map() {
             return;
           }
         }
+
         // 검색 결과 목록과 마커를 표출하는 함수입니다
         function displayPlaces(places) {
           const fragment = document.createDocumentFragment(),
@@ -93,17 +100,11 @@ export default function Map() {
             bounds.extend(placePosition);
           }
 
-          // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
-
           // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
           map.setBounds(bounds);
         }
-        function removeMarker() {
-          for (let i = 0; i < markers.length; i++) {
-            markers[i].setMap(null);
-          }
-          markers = [];
-        }
+
+        // 마커를 생성하고 지우는 함수들입니다.
         function addMarker(position, idx, title) {
           const imageSrc =
               "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",
@@ -122,6 +123,12 @@ export default function Map() {
 
           return marker;
         }
+        function removeMarker() {
+          for (let i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+          }
+          markers = [];
+        }
       });
     };
     mapScript.addEventListener("load", onLoadKakaoMap);
@@ -136,11 +143,11 @@ export default function Map() {
     <>
       <div className="flex flex-row fixed z-50 inset-y-1/2 ml-4">
         {listItems.length === 0 || listBoxActive === true ? null : (
-          <div className="z-50 bg-black w-10 h-10 rounded-full relative flex items-center justify-center cursor-pointer">
-            <TbTextWrapDisabled
-              onClick={handleToggle}
-              className="text-white text-2xl absolute inset-0 m-auto"
-            />
+          <div
+            onClick={handleToggle}
+            className="z-50 bg-black hover:bg-slate-500 w-10 h-10 rounded-full relative flex items-center justify-center cursor-pointer"
+          >
+            <IoIosArrowForward className="text-white text-2xl absolute inset-0 m-auto" />
           </div>
         )}
       </div>
@@ -152,13 +159,16 @@ export default function Map() {
             style={{ maxHeight: "calc(100vh - 80px)" }}
           >
             <ul id="placesList" className="flex flex-col pt-10">
-              <AiFillCloseCircle
+              <IoIosArrowBack
                 onClick={handleToggle}
-                className="cursor-pointer absolute end-5 top-2 w-7 h-7"
+                className="cursor-pointer absolute end-5 top-2 w-7 h-7 text-white hover:text-gray-500 "
               />
               {listItems.map((item) => {
                 return (
-                  <li key={item.id} className=" py-6 px-5 border-t-2">
+                  <li
+                    key={item.id}
+                    className=" py-6 px-5 border-t-2 border-zinc-600"
+                  >
                     <div className="text-xl pb-1">{item?.place_name}</div>
                     <div className="text-sm pb-1">{item?.address_name}</div>
                     <div className="text-sm text-zinc-400">{item?.phone}</div>
@@ -169,7 +179,7 @@ export default function Map() {
           </div>
         ) : null}
       </div>
-      <div className="flex flex-row fixed ">
+      <div className="flex flex-row fixed">
         <div id="map" className="w-screen h-screen absolute top-0 left-0 z-0" />
       </div>
     </>
