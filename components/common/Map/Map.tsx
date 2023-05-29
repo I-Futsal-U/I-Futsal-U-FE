@@ -14,6 +14,7 @@ export default function Map() {
   const { data: inputValue } = useQuery(["inputValue"]);
   const [listItems, setListItems] = useState([]);
   const [toggle, setToggle] = useState(true);
+  const [listBoxActive, setListBoxActive] = useState(true);
 
   useEffect(() => {
     const mapScript = document.createElement("script");
@@ -126,41 +127,50 @@ export default function Map() {
     mapScript.addEventListener("load", onLoadKakaoMap);
   }, [inputValue]);
 
+  const handleToggle = () => {
+    setToggle((prev) => !prev);
+    setListBoxActive((prev) => !prev);
+  };
+
   return (
     <>
-      <div className="flex flex-row fixed">
-        {listItems.length === 0 ? null : (
+      <div className="flex flex-row fixed z-50 inset-y-1/2 ml-4">
+        {listItems.length === 0 || listBoxActive === true ? null : (
           <div className="z-50 bg-black w-10 h-10 rounded-full relative flex items-center justify-center cursor-pointer">
             <TbTextWrapDisabled
-              onClick={() => setToggle((prev) => !prev)}
+              onClick={handleToggle}
               className="text-white text-2xl absolute inset-0 m-auto"
             />
           </div>
         )}
+      </div>
+      <div className="flex flex-row fixed z-50">
         {toggle === true && listItems.length !== 0 ? (
           <div
             id="menu_wrap"
-            className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72"
+            className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72 relative pt-2"
             style={{ maxHeight: "calc(100vh - 80px)" }}
           >
             <ul id="placesList" className="flex flex-col pt-10">
               <AiFillCloseCircle
-                onClick={() => setToggle((prev) => !prev)}
-                className="cursor-pointer"
+                onClick={handleToggle}
+                className="cursor-pointer absolute end-5 top-2 w-7 h-7"
               />
               {listItems.map((item) => {
                 return (
-                  <li key={item?.id} className="my-2 mb-10">
-                    <div>{item?.place_name}</div>
-                    <div>{item?.address_name}</div>
-                    <div>{item?.phone}</div>
+                  <li key={item.id} className=" py-6 px-5 border-t-2">
+                    <div className="text-xl pb-1">{item?.place_name}</div>
+                    <div className="text-sm pb-1">{item?.address_name}</div>
+                    <div className="text-sm text-zinc-400">{item?.phone}</div>
                   </li>
                 );
               })}
             </ul>
           </div>
         ) : null}
-        <div id="map" className="w-screen h-screen z-0 absolute top-0 left-0" />
+      </div>
+      <div className="flex flex-row fixed ">
+        <div id="map" className="w-screen h-screen absolute top-0 left-0 z-0" />
       </div>
     </>
   );
