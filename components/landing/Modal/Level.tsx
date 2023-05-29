@@ -6,20 +6,20 @@ function Level() {
         <li className="border-solid border-b px-3 pb-3 py-2 my-5">
           <input
             type="checkbox"
-            name="amateur-1"
-            id="amateur-1"
+            name="semi-pro"
+            id="semi-pro"
             className="scale-150 mr-4"
           />
-          <label htmlFor="amateur-1">아마추어 1 이하</label>
+          <label htmlFor="semi-pro">세미 프로</label>
         </li>
         <li className="border-solid border-b px-3 pb-3 py-2 my-5">
           <input
             type="checkbox"
-            name="amateur-2"
-            id="amateur-2"
+            name="amateur"
+            id="amateur"
             className="scale-150 mr-4"
           />
-          <label htmlFor="amateur-2">아마추어 2 이상</label>
+          <label htmlFor="amateur">아마추어</label>
         </li>
         <li className="border-solid border-b px-3 pb-3 py-2 my-5">
           <input
