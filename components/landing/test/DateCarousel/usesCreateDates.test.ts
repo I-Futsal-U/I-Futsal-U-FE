@@ -3,7 +3,6 @@ import { renderHook } from "@testing-library/react";
 import type {
   DAY_TYPE,
   MONTH_TYPE,
-  TodayType,
 } from "../../DateCarousel/hooks/useCreateDates";
 import { useCreateDates } from "../../DateCarousel/hooks/useCreateDates";
 

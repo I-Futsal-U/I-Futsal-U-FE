@@ -26,17 +26,17 @@ function DateCarousel() {
   const navigationPrevRef = useRef<HTMLButtonElement | null>(null);
   SwiperCore.use([Navigation]);
   return (
-    <div className="max-w-7xl w-screen h-38 my-0 mx-auto">
+    <div className="max-w-7xl w-screen h-24 my-0 mx-auto">
       <div className="w-5/6 h-full p-4 m-auto">
         {!loading && (
           <div
-            className="relative max-w-5xl h-full mx-auto py-8 bg-gray-100 rounded-2xl"
+            className="relative max-w-5xl h-full mx-auto py-1 bg-gray-100 rounded-2xl"
             aria-label="when loading is false"
           />
         )}
         {loading && (
           <div
-            className="not-loading relative max-w-5xl h-full mx-auto py-8"
+            className="not-loading relative max-w-5xl h-full mx-auto py-1"
             aria-label="when loading is true"
           >
             <Swiper

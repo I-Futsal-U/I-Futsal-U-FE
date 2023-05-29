@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import MatchList from "@/components/landing/Schedules/Matches/MatchList";
 // 기능 완성 후, 작성 예정

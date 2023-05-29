@@ -36,8 +36,8 @@ describe("DateCarousel Test", () => {
 
   test("로딩중일 떄 Swiper가 렌더링 되지 않는다.", () => {
     const setStateMock = jest.fn();
-    const useStateMock: any = (initialState: any) => [false, setStateMock];
-    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+    const useStateMock = () => [false, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock as jest.Mock);
 
     render(<DateCarousel />);
 
@@ -46,8 +46,8 @@ describe("DateCarousel Test", () => {
   });
   test("로딩중이 끝나면 Swiper가 렌더링 된다.", () => {
     const setStateMock = jest.fn();
-    const useStateMock: any = (initialState: any) => [true, setStateMock];
-    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+    const useStateMock = () => [true, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock as jest.Mock);
 
     render(<DateCarousel />);
 
@@ -56,8 +56,8 @@ describe("DateCarousel Test", () => {
   });
   test("Swiper slide가 배열 길이만큼 렌더링 된다", () => {
     const setStateMock = jest.fn();
-    const useStateMock: any = (initialState: any) => [true, setStateMock];
-    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+    const useStateMock = () => [true, setStateMock];
+    jest.spyOn(React, "useState").mockImplementation(useStateMock as jest.Mock);
 
     render(<DateCarousel />);
     const SwiperSlides = screen.getAllByLabelText("carousel slide");
