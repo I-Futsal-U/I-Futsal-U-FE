@@ -1,14 +1,41 @@
+import logo from "../../../public/images/logo.png";
 import mockdata from "./mockdata.json";
 import Image from "next/image";
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
-export default function FieldDetail() {
+type HandleDetailboxClose = () => void;
+interface ComponentProps {
+  toggle: HandleDetailboxClose;
+}
+
+export default function FieldDetail({ toggle }: ComponentProps) {
   return (
     <>
-      <div className="flex flex-row absolute z-50 ml-72">
-        <div className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72 relative pt-2">
-          <div>
-            <div id="match-collection">
-              <div>오늘 가능한 경기만 모아봤어요!</div>
+      <div className="fixed flex flex-row z-40 ml-72  border-r-4 border-zinc-600 overflow-y-auto h-screen bg-gray-900 opacity-95 text-white w-80  pt-2">
+        <IoMdClose
+          className="z-50 cursor-pointer absolute end-5 top-2 w-7 h-7 text-white hover:text-gray-500 "
+          onClick={toggle}
+        />
+        <div
+          id="menu_wrap"
+          className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72 relative pt-10 w-80"
+          style={{ maxHeight: "calc(100vh - 80px)" }}
+        >
+          <div
+            id="placesList"
+            className="flex flex-col pt-6 px-5 border-t-2 border-zinc-600"
+          >
+            <Image
+              src={logo}
+              width={200}
+              height={200}
+              alt="field image"
+            ></Image>
+            <div className="">
+              <div className="flex flex-row justify-center items-center mt-12 mb-6 bg-white text-black h-8 rounded-2xl ">
+                오늘 가능한 경기만 모아봤어요!
+              </div>
               <div>
                 {mockdata.Field.map((item) => {
                   return (
@@ -20,9 +47,9 @@ export default function FieldDetail() {
                   );
                 })}
               </div>
-            </div>
-            <div>
-              <div>이 구장의 평균별점은 3.7/5점이에요!</div>
+              <div className="flex flex-row justify-center items-center  mt-12 mb-6 bg-white text-black h-8 rounded-2xl">
+                이 구장의 평균별점은 3.7/5점이에요!
+              </div>
               <div>
                 {mockdata.review.map((item) => {
                   return (

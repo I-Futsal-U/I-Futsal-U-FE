@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { log } from "console";
 import { useEffect, useState } from "react";
 
 interface PlaceSearch {
@@ -31,7 +30,7 @@ export default function useKakaoMap() {
         const mapContainer = document.getElementById("map");
         const mapOption = {
           center: new window.kakao.maps.LatLng(37.541, 126.986),
-          level: 5,
+          level: 4,
         };
         const map = new window.kakao.maps.Map(mapContainer, mapOption);
 
@@ -75,7 +74,6 @@ export default function useKakaoMap() {
         // 검색 결과 목록과 마커를 표출하는 함수입니다
         function displayPlaces(places: PlaceSearch["data"]) {
           const bounds = new window.kakao.maps.LatLngBounds();
-          console.log(places);
 
           // 지도에 표시되고 있는 마커를 제거합니다
           removeMarker();
@@ -99,8 +97,6 @@ export default function useKakaoMap() {
 
         // 마커를 생성하고 지우는 함수들입니다.
         function addMarker(position: Marker["position"], positionName: string) {
-          console.log(positionName);
-
           const imageSrc =
               "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fccrn3v%2FbtshAwbDjZR%2F6ScWUxSRT2vxwO1kMpiGT1%2Fimg.png",
             imageSize = new window.kakao.maps.Size(85, 90), // 마커 이미지의 크기
