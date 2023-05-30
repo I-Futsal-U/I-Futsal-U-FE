@@ -6,7 +6,6 @@ export default function FieldDetail() {
     <>
       <div className="flex flex-row absolute z-50 ml-72">
         <div className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72 relative pt-2">
-          <Image src={mockdata.Field.image} alt="field image" />
           <div>
             <div id="match-collection">
               <div>오늘 가능한 경기만 모아봤어요!</div>
