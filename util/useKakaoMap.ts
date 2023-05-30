@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { log } from "console";
 import { useEffect, useState } from "react";
 
 interface PlaceSearch {
@@ -47,6 +48,7 @@ export default function useKakaoMap() {
 
         // 검색관련 객체 및 함수 생성부분입니다.
         const ps = new window.kakao.maps.services.Places();
+
         if (inputValue) {
           ps.keywordSearch(inputValue, placesSearchCB);
         }
@@ -73,6 +75,7 @@ export default function useKakaoMap() {
         // 검색 결과 목록과 마커를 표출하는 함수입니다
         function displayPlaces(places: PlaceSearch["data"]) {
           const bounds = new window.kakao.maps.LatLngBounds();
+          console.log(places);
 
           // 지도에 표시되고 있는 마커를 제거합니다
           removeMarker();
@@ -80,10 +83,10 @@ export default function useKakaoMap() {
           for (let i = 0; i < places.length; i++) {
             // 마커를 생성하고 지도에 표시합니다
             const placePosition = new window.kakao.maps.LatLng(
-              places[i].y,
-              places[i].x,
-            );
-            addMarker(placePosition);
+                places[i].y,
+                places[i].x,
+              ),
+              marker = addMarker(placePosition, places[i].place_name);
 
             // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
             // LatLngBounds 객체에 좌표를 추가합니다
@@ -95,10 +98,12 @@ export default function useKakaoMap() {
         }
 
         // 마커를 생성하고 지우는 함수들입니다.
-        function addMarker(position: Marker["position"]) {
+        function addMarker(position: Marker["position"], positionName: string) {
+          console.log(positionName);
+
           const imageSrc =
-              "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",
-            imageSize = new window.kakao.maps.Size(24, 35), // 마커 이미지의 크기
+              "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fccrn3v%2FbtshAwbDjZR%2F6ScWUxSRT2vxwO1kMpiGT1%2Fimg.png",
+            imageSize = new window.kakao.maps.Size(85, 90), // 마커 이미지의 크기
             markerImage = new window.kakao.maps.MarkerImage(
               imageSrc,
               imageSize,
@@ -107,6 +112,22 @@ export default function useKakaoMap() {
               position: position, // 마커의 위치
               image: markerImage,
             });
+
+          const content =
+            "<div style='background-color:black; color:white; border-radius:10px; padding:6px; font-size:small;'>" +
+            positionName +
+            "</div>";
+          // 커스텀 오버레이가 표시될 위치입니다
+          const ps = new window.kakao.maps.LatLng(position.La, position.Ma);
+
+          // 커스텀 오버레이를 생성합니다
+          const customOverlay = new window.kakao.maps.CustomOverlay({
+            map: map,
+            position: position,
+            content: content,
+            yAnchor: 0.6,
+          });
+
           marker.setMap(map); // 지도 위에 마커를 표출합니다
           markers.push(marker); // 배열에 생성된 마커를 추가합니다
           return marker;

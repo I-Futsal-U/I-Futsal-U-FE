@@ -1,3 +1,4 @@
+import FieldDetail from "./FieldDetail";
 import useKakaoMap from "@/util/useKakaoMap";
 import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
@@ -52,6 +53,7 @@ export default function Map() {
             </ul>
           </div>
         ) : null}
+        {/* <FieldDetail /> */}
       </div>
       <div className="flex flex-row fixed">
         <div id="map" className="w-screen h-screen absolute top-0 left-0 z-0" />
