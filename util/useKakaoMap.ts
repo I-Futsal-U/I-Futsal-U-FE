@@ -1,12 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
-interface PlaceSearch {
-  data: { [key: string]: string }[];
-  status: string | null;
-  pagination: number;
-}
-
 interface Marker {
   position: { La: number; Ma: number };
 }

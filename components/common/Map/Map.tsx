@@ -1,4 +1,7 @@
+"use client";
+
 import FieldDetail from "./FieldDetail";
+import PlaceList from "./PlaceList";
 import useKakaoMap from "@/util/useKakaoMap";
 import useViewportTracker from "@/util/useViewportTracker";
 import { useState } from "react";
@@ -56,25 +59,7 @@ export default function Map() {
                 onClick={handleToggle}
                 className="cursor-pointer absolute end-5 top-2 w-7 h-7 text-white hover:text-gray-500 "
               />
-              {listItems.map((item) => {
-                return (
-                  <div
-                    key={item.id}
-                    className="py-3 md:py-6 px-5 border-t-2 border-zinc-600 cursor-pointer"
-                    onClick={handleDetailboxOpen}
-                  >
-                    <div className="text-base md:text-xl pb-1 ">
-                      {item?.place_name}
-                    </div>
-                    <div className="text-xs md:text-sm pb-1">
-                      {item?.address_name}
-                    </div>
-                    <div className="text-xs md:text-sm text-zinc-400">
-                      {item?.phone}
-                    </div>
-                  </div>
-                );
-              })}
+              <PlaceList listItems={listItems} toggle={handleDetailboxOpen} />
             </ul>
           </div>
         ) : null}

@@ -5,3 +5,9 @@ interface Props {
 interface Window {
   kakao: any;
 }
+
+interface PlaceSearch {
+  data: { [key: string]: string }[];
+  status: string | null;
+  pagination: number;
+}
