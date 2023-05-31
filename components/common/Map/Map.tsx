@@ -1,5 +1,6 @@
 import FieldDetail from "./FieldDetail";
 import useKakaoMap from "@/util/useKakaoMap";
+import useViewportTracker from "@/util/useViewportTracker";
 import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
@@ -9,6 +10,7 @@ export default function Map() {
   const [listBoxActive, setListBoxActive] = useState(false);
   const [detailBoxActive, setDetailBoxActive] = useState(false);
   const listItems: { [key: string]: string }[] = useKakaoMap();
+  const viewportWidth = useViewportTracker();
 
   const handleToggle = () => {
     setToggle((prev) => !prev);
@@ -22,6 +24,14 @@ export default function Map() {
     setDetailBoxActive(false);
   };
 
+  const mobile =
+    toggle === false &&
+    listItems.length !== 0 &&
+    viewportWidth < 768 &&
+    detailBoxActive === false;
+  const mobile2 =
+    toggle === false && listItems.length !== 0 && viewportWidth > 768;
+
   return (
     <>
       <div className="flex flex-row fixed z-50 inset-y-1/2 ml-4">
@@ -34,11 +44,11 @@ export default function Map() {
           </div>
         )}
       </div>
-      <div className="flex flex-row fixed z-50">
-        {toggle === false && listItems.length !== 0 ? (
+      <div className="flex flex-row fixed z-50 top-96 md:top-20">
+        {mobile || mobile2 ? (
           <div
             id="menu_wrap"
-            className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72 relative pt-2 border-r-2 border-zinc-600"
+            className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-screen md:w-72 relative pt-2 border-r-2 border-zinc-600"
             style={{ maxHeight: "calc(100vh - 80px)" }}
           >
             <ul id="placesList" className="flex flex-col pt-10">
@@ -50,12 +60,18 @@ export default function Map() {
                 return (
                   <div
                     key={item.id}
-                    className="py-6 px-5 border-t-2 border-zinc-600 cursor-pointer"
+                    className="py-3 md:py-6 px-5 border-t-2 border-zinc-600 cursor-pointer"
                     onClick={handleDetailboxOpen}
                   >
-                    <div className="text-xl pb-1 ">{item?.place_name}</div>
-                    <div className="text-sm pb-1">{item?.address_name}</div>
-                    <div className="text-sm text-zinc-400">{item?.phone}</div>
+                    <div className="text-base md:text-xl pb-1 ">
+                      {item?.place_name}
+                    </div>
+                    <div className="text-xs md:text-sm pb-1">
+                      {item?.address_name}
+                    </div>
+                    <div className="text-xs md:text-sm text-zinc-400">
+                      {item?.phone}
+                    </div>
                   </div>
                 );
               })}

@@ -12,20 +12,17 @@ interface ComponentProps {
 export default function FieldDetail({ toggle }: ComponentProps) {
   return (
     <>
-      <div className="fixed flex flex-row z-40 ml-72  border-r-4 border-zinc-600 overflow-y-auto h-screen bg-gray-900 opacity-95 text-white w-80  pt-2">
+      <div className="fixed flex flex-row justify-center z-40 md:ml-72  md:border-r-4 border-zinc-600 overflow-y-auto h-screen bg-gray-900 opacity-95 text-white w-screen md:w-80 pt-2 ">
         <IoMdClose
           className="z-50 cursor-pointer absolute end-5 top-2 w-7 h-7 text-white hover:text-gray-500 "
           onClick={toggle}
         />
         <div
           id="menu_wrap"
-          className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white w-72 relative pt-10 w-80"
+          className="overflow-y-auto h-screen z-10 bg-gray-900 opacity-95 text-white relative pt-10"
           style={{ maxHeight: "calc(100vh - 80px)" }}
         >
-          <div
-            id="placesList"
-            className="flex flex-col pt-6 px-5 border-t-2 border-zinc-600"
-          >
+          <div id="placesList" className="flex flex-col pt-6 px-5">
             <Image
               src={logo}
               width={200}
