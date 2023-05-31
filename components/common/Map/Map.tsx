@@ -13,6 +13,7 @@ export default function Map() {
   const handleToggle = () => {
     setToggle((prev) => !prev);
     setListBoxActive((prev) => !prev);
+    setDetailBoxActive(false);
   };
   const handleDetailboxOpen = () => {
     setDetailBoxActive(true);
@@ -49,10 +50,10 @@ export default function Map() {
                 return (
                   <div
                     key={item.id}
-                    className="py-6 px-5 border-t-2 border-zinc-600"
+                    className="py-6 px-5 border-t-2 border-zinc-600 cursor-pointer"
                     onClick={handleDetailboxOpen}
                   >
-                    <div className="text-xl pb-1">{item?.place_name}</div>
+                    <div className="text-xl pb-1 ">{item?.place_name}</div>
                     <div className="text-sm pb-1">{item?.address_name}</div>
                     <div className="text-sm text-zinc-400">{item?.phone}</div>
                   </div>
