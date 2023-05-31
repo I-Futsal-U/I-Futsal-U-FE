@@ -1,7 +1,6 @@
 import logo from "../../../public/images/logo.png";
 import mockdata from "./mockdata.json";
 import Image from "next/image";
-import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
 type HandleDetailboxClose = () => void;
