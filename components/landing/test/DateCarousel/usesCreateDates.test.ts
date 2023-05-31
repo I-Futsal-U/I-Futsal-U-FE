@@ -1,10 +1,9 @@
-import { renderHook } from "@testing-library/react";
-
 import type {
   DAY_TYPE,
   MONTH_TYPE,
 } from "../../DateCarousel/hooks/useCreateDates";
 import { useCreateDates } from "../../DateCarousel/hooks/useCreateDates";
+import { renderHook } from "@testing-library/react";
 
 describe("useCreateDates hook test", () => {
   test("오늘 부터 {weeks}주 동안의 날짜 정보를 도출한다.", () => {

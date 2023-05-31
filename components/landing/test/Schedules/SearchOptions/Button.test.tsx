@@ -1,8 +1,7 @@
+import Button from "@/components/landing/Schedules/SearchOptions/Button";
 import { render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
 import { useRouter } from "next/navigation";
-
-import Button from "@/components/landing/Schedules/SearchOptions/Button";
 
 // 기능 완성 후, 작성 예정
 jest.mock("next/navigation");

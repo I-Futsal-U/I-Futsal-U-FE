@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
-
 import MainItem from "../../MainCarousel/MainItem";
+import { render, screen } from "@testing-library/react";
 
 describe("MainItem test", () => {
   test("MainItem 렌더링 테스트", () => {

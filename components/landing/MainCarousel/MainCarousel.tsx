@@ -1,14 +1,13 @@
 "use client";
-import "swiper/swiper.min.css";
 
+import MainItem from "./MainItem";
 import { useRef } from "react";
 import type { IconType } from "react-icons";
 import { FaAngleLeft, FaAngleRight, FaMapMarkedAlt } from "react-icons/fa";
 import { MdSportsSoccer } from "react-icons/md";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import MainItem from "./MainItem";
+import "swiper/swiper.min.css";
 
 function MainCarousel() {
   const navigationNextRef = useRef<HTMLButtonElement | null>(null);

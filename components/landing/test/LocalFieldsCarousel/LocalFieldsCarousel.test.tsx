@@ -1,8 +1,7 @@
+import LocalFieldsCarousel from "../../LocalFieldsCarousel/LocalFieldsCarousel";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
-
-import LocalFieldsCarousel from "../../LocalFieldsCarousel/LocalFieldsCarousel";
 
 describe("LocalFieldsCarousel test", () => {
   test("로딩중일 떄 Swiper가 렌더링 되지 않는다.", () => {

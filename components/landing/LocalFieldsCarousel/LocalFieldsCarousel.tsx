@@ -1,13 +1,12 @@
 "use client";
-import "swiper/swiper.min.css";
 
+import LocalFieldsItem from "./LocalFieldsItem";
+import items from "./mockData.json";
 import { useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import LocalFieldsItem from "./LocalFieldsItem";
-import items from "./mockData.json";
+import "swiper/swiper.min.css";
 
 function LocalFieldsCarousel() {
   const [loading, setLoading] = useState<boolean>(false);

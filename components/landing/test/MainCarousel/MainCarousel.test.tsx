@@ -1,7 +1,6 @@
+import MainCarousel from "../../MainCarousel/MainCarousel";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
-import MainCarousel from "../../MainCarousel/MainCarousel";
 
 describe("Main Carousel Test", () => {
   test("Carousel Slide가 렌더링된다.", () => {

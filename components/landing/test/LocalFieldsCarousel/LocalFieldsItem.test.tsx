@@ -1,6 +1,5 @@
-import { render } from "@testing-library/react";
-
 import LocalFieldsItem from "../../LocalFieldsCarousel/LocalFieldsItem";
+import { render } from "@testing-library/react";
 
 describe("LocalFieldItem test", () => {
   test("", () => {

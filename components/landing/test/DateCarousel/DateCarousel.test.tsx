@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
-import React, { useState } from "react";
-
 import DateCarousel from "../../DateCarousel/DateCarousel";
 import type {
   DAY_TYPE,
   MONTH_TYPE,
 } from "../../DateCarousel/hooks/useCreateDates";
+import { render, screen } from "@testing-library/react";
+import React, { useState } from "react";
 
 jest.mock("../../DateCarousel/hooks/useCreateDates", () => ({
   ...jest.requireActual("../../DateCarousel/hooks/useCreateDates"),

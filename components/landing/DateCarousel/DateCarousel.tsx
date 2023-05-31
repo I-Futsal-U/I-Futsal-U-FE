@@ -1,15 +1,14 @@
 "use client";
 
-import "swiper/swiper.min.css";
-
+import DateItem from "./DateItem";
+import { DAYS, useCreateDates } from "./hooks/useCreateDates";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
 
-import DateItem from "./DateItem";
-import { DAYS, useCreateDates } from "./hooks/useCreateDates";
 // date.getDate() - 오늘 날짜
 // date.getMonth() - 이번달 (0 ~ 11)
 // date.getDay() - 오늘 요일 (0 ~ 6)

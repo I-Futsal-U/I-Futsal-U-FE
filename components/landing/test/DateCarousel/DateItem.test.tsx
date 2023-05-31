@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
-
 import DateItem from "../../DateCarousel/DateItem";
+import { render, screen } from "@testing-library/react";
 
 describe("DateItem Test", () => {
   test("day가 문자열 `SUN`이면 빨간색 text", () => {
