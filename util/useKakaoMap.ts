@@ -1,3 +1,4 @@
+import filtereddata from "../components/common/Map/filtereddata.json";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,7 @@ export default function useKakaoMap() {
         const mapContainer = document.getElementById("map");
         const mapOption = {
           center: new window.kakao.maps.LatLng(37.541, 126.986),
-          level: 4,
+          level: 5,
         };
         const map = new window.kakao.maps.Map(mapContainer, mapOption);
 
@@ -49,14 +50,38 @@ export default function useKakaoMap() {
           data: PlaceSearch["data"],
           status: PlaceSearch["status"],
         ) {
-          if (status === window.kakao.maps.services.Status.OK) {
+          // 카카오맵 검샘API의 데이터를 가공합니다.
+          const filtered = data[0].address_name.split(" ")[1];
+          let filteredData;
+          if (
+            inputValue === "서울" ||
+            inputValue === "서울시" ||
+            inputValue === "서울특별시" ||
+            inputValue === "서울 특별시"
+          ) {
+            filteredData = filtereddata.DATA;
+          } else {
+            filteredData = filtereddata.DATA.filter((item) => {
+              return item.address_name.includes(filtered) === true
+                ? true
+                : false;
+            });
+          }
+
+          if (
+            status === window.kakao.maps.services.Status.OK &&
+            filteredData.length !== 0
+          ) {
             // 정상적으로 검색이 완료됐으면
             // 검색 목록과 마커를 표출합니다
-            displayPlaces(data);
-            setListItems(data);
+            displayPlaces(filteredData);
+            setListItems(filteredData);
 
             // 페이지 번호를 표출합니다
-          } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
+          } else if (
+            status === window.kakao.maps.services.Status.ZERO_RESULT ||
+            filteredData.length === 0
+          ) {
             alert("검색 결과가 존재하지 않습니다.");
             return;
           } else if (status === window.kakao.maps.services.Status.ERROR) {
