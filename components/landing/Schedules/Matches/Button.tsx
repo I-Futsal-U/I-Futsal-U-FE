@@ -1,23 +1,19 @@
-type ButtonStyleType = {
-  className: string;
-  text: string;
-  disabled: boolean;
-};
+import type { MatchButtonStyleType } from "@/types/button";
 
 function Button() {
-  const APPLICABLE: ButtonStyleType = {
+  const APPLICABLE: MatchButtonStyleType = {
     className: "bg-blue-400 text-white",
     text: "신청가능",
     disabled: false,
   };
 
-  const CLOSE_SOON: ButtonStyleType = {
+  const CLOSE_SOON: MatchButtonStyleType = {
     className: "bg-red-500 text-white",
     text: "마감임박",
     disabled: false,
   };
 
-  const CLOSED: ButtonStyleType = {
+  const CLOSED: MatchButtonStyleType = {
     className: "bg-slate-100 text-slate-400",
     text: "마감",
     disabled: true,

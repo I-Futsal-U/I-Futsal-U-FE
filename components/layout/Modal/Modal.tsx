@@ -34,7 +34,7 @@ function Modal({ children }: ModalProps) {
         <div className="w-full text-center">
           <button
             type="button"
-            className="text-white bg-blue-600 hover:bg-blue-500 mx-auto w-36 h-11 rounded-xl"
+            className="text-white bg-blue-600 hover:bg-blue-700 mx-auto w-36 h-11 rounded-xl"
             onClick={closeModal}
           >
             적용하기
