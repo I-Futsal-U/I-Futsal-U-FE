@@ -1,6 +1,8 @@
-import Button from "./Button";
+interface MatchItemProps {
+  children?: React.ReactNode;
+}
 
-function MatchItem() {
+function MatchItem({ children }: MatchItemProps) {
   return (
     <div className="flex py-3 items-center border-b border-solid border-gray-400">
       <span className="text-lg sm:text-xl px-2 sm:px-4">18:00</span>
@@ -21,7 +23,7 @@ function MatchItem() {
           <span>모든 레벨</span>
         </div>
       </div>
-      <Button />
+      {children}
     </div>
   );
 }
