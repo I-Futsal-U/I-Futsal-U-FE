@@ -1,5 +1,4 @@
-import Header from "@/components/layout/Header/Header";
-
+import Header from "@/components/common/Header/Header";
 export default async function RootLayout({
   children,
   landing,

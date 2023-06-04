@@ -1,7 +1,6 @@
-import LocalFieldsCarousel from "@/components/landing/LocalFieldsCarousel/LocalFieldsCarousel";
-import MainCarousel from "@/components/landing/MainCarousel/MainCarousel";
-import Schedules from "@/components/landing/Schedules/Schedules";
-
+import LocalFieldsCarousel from "@/components/landingPage/LocalFieldsCarousel/LocalFieldsCarousel";
+import MainCarousel from "@/components/landingPage/MainCarousel/MainCarousel";
+import Schedules from "@/components/landingPage/Schedules/Schedules";
 function LandingPage() {
   return (
     <>
