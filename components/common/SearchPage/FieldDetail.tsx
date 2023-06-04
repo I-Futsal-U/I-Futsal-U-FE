@@ -1,5 +1,5 @@
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Image from "next/image";
-import { IoMdClose } from "react-icons/io";
 
 import logo from "../../../public/images/logo.png";
 import mockdata from "./mockdata.json";

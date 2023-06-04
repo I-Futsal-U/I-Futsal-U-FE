@@ -1,5 +1,5 @@
+import { IoSettingsOutline } from "@react-icons/all-files/io5/IoSettingsOutline";
 import Image from "next/image";
-import { IoSettingsOutline } from "react-icons/io5";
 
 import userImg from "../../../public/images/user-profile-default.png";
 

@@ -1,8 +1,8 @@
 "use client";
 
+import { IoIosArrowBack } from "@react-icons/all-files/io/IoIosArrowBack";
+import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { useState } from "react";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
 
 import useKakaoMap from "@/util/useKakaoMap";
 import useViewportTracker from "@/util/useViewportTracker";

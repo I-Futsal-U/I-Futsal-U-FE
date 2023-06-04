@@ -1,4 +1,5 @@
-import { FaStar, FaStarHalf } from "react-icons/fa";
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
+import { FaStarHalf } from "@react-icons/all-files/fa/FaStarHalf";
 
 function ReviewItem() {
   const rating = 3.5;

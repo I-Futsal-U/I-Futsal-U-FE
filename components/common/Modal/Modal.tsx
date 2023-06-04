@@ -1,5 +1,5 @@
+import { GrClose } from "@react-icons/all-files/gr/GrClose";
 import { useRouter } from "next/navigation";
-import { GrClose } from "react-icons/gr";
 
 interface ModalProps {
   children: React.ReactNode;

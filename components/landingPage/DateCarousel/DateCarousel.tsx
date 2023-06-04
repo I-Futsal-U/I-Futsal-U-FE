@@ -2,9 +2,10 @@
 
 import "swiper/swiper.min.css";
 
+import { FaAngleLeft } from "@react-icons/all-files/fa/FaAngleLeft";
+import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 

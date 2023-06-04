@@ -1,10 +1,12 @@
 "use client";
 import "swiper/swiper.min.css";
 
+import { FaAngleLeft } from "@react-icons/all-files/fa/FaAngleLeft";
+import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
+import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
+import { GiSoccerKick } from "@react-icons/all-files/gi/GiSoccerKick";
+import { type IconType } from "@react-icons/all-files/lib";
 import { useRef } from "react";
-import type { IconType } from "react-icons";
-import { FaAngleLeft, FaAngleRight, FaMapMarkedAlt } from "react-icons/fa";
-import { MdSportsSoccer } from "react-icons/md";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,7 +17,7 @@ function MainCarousel() {
   const navigationPrevRef = useRef<HTMLButtonElement | null>(null);
 
   const bgColors = ["bg-blue-700", "bg-red-200"];
-  const icons: IconType[] = [MdSportsSoccer, FaMapMarkedAlt];
+  const icons: IconType[] = [GiSoccerKick, FaMapMarkedAlt];
   const texts = ["우리 모두 페어플레이해요!", "주변 풋살장을 찾아보세요."];
 
   return (
