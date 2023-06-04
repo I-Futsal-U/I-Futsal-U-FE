@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 
-import Button from "@/components/landing/Schedules/Matches/Button";
+import Button from "@/components/landingPage/Schedules/Matches/Button";
 // 기능 완성 후, 작성 예정
 
 describe("MatchItem Button test", () => {
