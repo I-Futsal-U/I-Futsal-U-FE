@@ -1,8 +1,8 @@
-import AssignedMatches from "@/components/userInfo/AssignedMatches/AssignedMatches";
-import Payments from "@/components/userInfo/Payments/Payments";
-import Profile from "@/components/userInfo/Profile/Profile";
-import Reservation from "@/components/userInfo/Reservation/Reservation";
-import Review from "@/components/userInfo/Review/Review";
+import AssignedMatches from "@/components/userInfoPage/AssignedMatches/AssignedMatches";
+import Payments from "@/components/userInfoPage/Payments/Payments";
+import Profile from "@/components/userInfoPage/Profile/Profile";
+import Reservation from "@/components/userInfoPage/Reservation/Reservation";
+import Review from "@/components/userInfoPage/Review/Review";
 
 function UserInfoPage() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
-import Level from "@/components/landing/Modal/Level";
-import Modal from "@/components/layout/Modal/Modal";
+import Modal from "@/components/common/Modal/Modal";
+import Level from "@/components/landingPage/Modal/Level";
 
 function LevelModal() {
   return (
