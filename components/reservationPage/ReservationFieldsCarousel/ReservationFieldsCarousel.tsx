@@ -1,28 +1,58 @@
 "use client";
 
-import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { useQuery } from "@tanstack/react-query";
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ReservationFieldsItem from "./ReservationFieldsItem";
 
 export default function ReservationFieldsCarousel() {
+  async function getData() {
+    const res = await fetch(`http://localhost:4000/Field`);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    console.log(res);
+    return res.json();
+  }
+
+  const { data } = useQuery(["Field"], getData, {
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+  });
+
   return (
     <>
-      <Swiper
-        loop={true}
-        modules={[Navigation, Pagination, Scrollbar]}
-        spaceBetween={10}
-        slidesPerView={1}
-        navigation={true}
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
-      >
-        <SwiperSlide>
-          <ReservationFieldsItem />
-        </SwiperSlide>
-      </Swiper>
+      <div className="flex flex-row justify-center items-center box-border">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="w-4/5 h-96 bg-gray-200"
+        >
+          {data?.img?.map((item: string) => {
+            return (
+              <SwiperSlide
+                key={item.split("/media")[1]}
+                className="bg-white flex items-center justify-center "
+              >
+                <ReservationFieldsItem image={item} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </>
   );
 }
