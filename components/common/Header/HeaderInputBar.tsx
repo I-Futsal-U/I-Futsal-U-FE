@@ -18,7 +18,7 @@ export default function HeaderInputBar() {
     queryClient.setQueryData(["inputValue"], input);
     setInput("");
     await queryClient.refetchQueries(["inputValue"]);
-    router.push("/searchpage");
+    router.push("/search");
   };
 
   return (
