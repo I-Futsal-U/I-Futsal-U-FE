@@ -9,6 +9,13 @@
       "numofpeople": "10~18명",
       "shoes": "풋살화/운동화"
     },
+    "matchdata": {
+      "time": "6월 6일 화요일 18:00",
+      "field": "서울 피치푸마목동(홈플러스 목동점) 2구장",
+      "address": "서울특별시 양천구 목동 919-7",
+      "star": "3.7",
+      "fee": "10,000원/2시간"
+    },
     "img": [
       "https://plab-football.s3.amazonaws.com/media/ydp_sky_B_coner.jpeg",
       "https://plab-football.s3.amazonaws.com/media/coner_U7jEVnu.jpg",

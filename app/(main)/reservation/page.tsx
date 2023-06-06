@@ -1,11 +1,11 @@
-import MatchpointBox from "@/components/reservationPage/MatchpointBox/MatchpointBox";
+import MiddleBoxContainer from "@/components/reservationPage/MiddleBoxContainer/MiddleBoxContainer";
 import ReservationFieldsCarousel from "@/components/reservationPage/ReservationFieldsCarousel/ReservationFieldsCarousel";
 
 export default function reservationPage() {
   return (
     <>
       <ReservationFieldsCarousel />
-      <MatchpointBox />
+      <MiddleBoxContainer />
     </>
   );
 }

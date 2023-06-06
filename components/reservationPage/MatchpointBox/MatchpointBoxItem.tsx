@@ -26,30 +26,32 @@ export default function MatchpointBoxItem() {
 
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className="flex flex-nowrap mt-5">
-          <FiTrendingUp />
-          <div className="ml-3">{matchpoint?.level}</div>
+      <section className="text-zinc-700 md:text-sm lg:text-base">
+        <div className="flex flex-nowrap">
+          <div className="flex flex-nowrap mt-5">
+            <FiTrendingUp />
+            <div className="ml-3">{matchpoint?.level}</div>
+          </div>
+          <div className="flex flex-nowrap mt-5 ml-10">
+            <ImManWoman />
+            <div className="ml-3">{matchpoint?.sex}</div>
+          </div>
+          <div className="flex flex-nowrap mt-5 ml-5 md:ml-10">
+            <GiSoccerField />
+            <div className="ml-3 ">{matchpoint?.versus}</div>
+          </div>
         </div>
-        <div className="flex flex-nowrap mt-5 ml-10">
-          <ImManWoman />
-          <div className="ml-3">{matchpoint?.sex}</div>
+        <div className="flex flex-nowrap">
+          <div className="flex flex-nowrap mt-5">
+            <AiOutlineTeam />
+            <div className="ml-3">{matchpoint?.numofpeople}</div>
+          </div>
+          <div className="flex flex-nowrap mt-5 ml-10">
+            <GiSonicShoes />
+            <div className="ml-3">{matchpoint?.shoes}</div>
+          </div>
         </div>
-        <div className="flex flex-nowrap mt-5 ml-5 md:ml-10">
-          <GiSoccerField />
-          <div className="ml-3">{matchpoint?.versus}</div>
-        </div>
-      </div>
-      <div className="flex flex-wrap">
-        <div className="flex flex-nowrap mt-5">
-          <AiOutlineTeam />
-          <div className="ml-3">{matchpoint?.numofpeople}</div>
-        </div>
-        <div className="flex flex-nowrap mt-5 ml-10">
-          <GiSonicShoes />
-          <div className="ml-3">{matchpoint?.shoes}</div>
-        </div>
-      </div>
+      </section>
     </>
   );
 }

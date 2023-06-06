@@ -39,7 +39,7 @@ export default function ReservationFieldsCarousel() {
           }}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="w-4/5 h-96 bg-gray-200"
+          className="w-10/12 md:w-9/12 lg:w-7/12 h-96 bg-gray-200"
         >
           {data?.img?.map((item: string) => {
             return (
