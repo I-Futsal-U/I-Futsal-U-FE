@@ -1,5 +1,13 @@
-function ReservationPage() {
-  return <div>Reservation detail- 예약 내역 및 예약 변경, 취소</div>;
+import Calendar from "@/components/common/Calendar/Calendar";
+import Result from "@/components/reservationDetailPage/Result";
+
+function ReservationDetailPage() {
+  return (
+    <div className="flex flex-col md:flex-row gap-3">
+      <Calendar />
+      <Result />
+    </div>
+  );
 }
 
-export default ReservationPage;
+export default ReservationDetailPage;
