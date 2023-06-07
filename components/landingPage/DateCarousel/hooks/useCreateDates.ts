@@ -1,18 +1,6 @@
 import { useEffect, useState } from "react";
-// date.getDate() - 오늘 날짜
-// date.getMonth() - 이번달 (0 ~ 11)
-// date.getDay() - 오늘 요일 (0 ~ 6)
 
-export type MONTH_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
-export type DAY_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6;
-
-export type TodayType = {
-  month: MONTH_TYPE;
-  date: number;
-  day: DAY_TYPE;
-};
-
-export const DAYS = ["SUN", "MON", "TUE", "WED", "THUR", "FRI", "SAT"];
+import type { DAY_TYPE, MONTH_TYPE, TodayType } from "@/constant/days";
 
 export const useCreateDates = (weeks: number) => {
   const [days, setDays] = useState<TodayType[]>();
