@@ -4,27 +4,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { useQuery } from "@tanstack/react-query";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import mockdata from "../mockdata.json";
 import ReservationFieldsItem from "./ReservationFieldsItem";
 
 export default function ReservationFieldsCarousel() {
-  async function getData() {
-    const res = await fetch(`http://localhost:4000/Field`);
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    return res.json();
-  }
-
-  const { data } = useQuery(["Field"], getData, {
-    staleTime: Infinity,
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-    refetchOnReconnect: false,
-  });
+  const data = mockdata.Field;
 
   return (
     <>

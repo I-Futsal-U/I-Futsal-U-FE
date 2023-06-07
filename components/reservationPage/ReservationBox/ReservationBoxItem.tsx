@@ -12,7 +12,7 @@ export default function ReservationBoxItem({
 }) {
   return (
     <>
-      <section>
+      <section className="">
         <div className="text-lg font-medium">{mockdata.time}</div>
         <div className="text-xl mt-2">{mockdata.field}</div>
         <div className="text-sm text-stone-600">{mockdata.address}</div>

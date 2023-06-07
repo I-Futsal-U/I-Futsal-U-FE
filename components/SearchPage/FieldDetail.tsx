@@ -1,7 +1,7 @@
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Image from "next/image";
 
-import logo from "../../../public/images/logo.png";
+import logo from "../../public/images/logo.png";
 import mockdata from "./mockdata.json";
 
 type HandleDetailboxClose = () => void;

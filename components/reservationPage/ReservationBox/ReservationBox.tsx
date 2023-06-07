@@ -6,9 +6,9 @@ export default function ReservationBox() {
 
   return (
     <>
-      <section className="box-border border border-neutral-400 rounded-xl w-2/12 h-64 pt-4 mt-10 pl-5 shadow-2xl sticky">
+      <div className="box-border border border-neutral-400 rounded-xl w-80 h-64 pt-4 mt-10 pl-5 shadow-xl">
         <ReservationBoxItem mockdata={data} />
-      </section>
+      </div>
     </>
   );
 }
