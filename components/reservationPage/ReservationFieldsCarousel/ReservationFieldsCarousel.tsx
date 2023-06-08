@@ -15,7 +15,7 @@ export default function ReservationFieldsCarousel() {
 
   return (
     <>
-      <div className="flex flex-row justify-center items-center box-border">
+      <div>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}

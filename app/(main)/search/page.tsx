@@ -1,4 +1,4 @@
-import Map from "@/components/SearchPage/Map";
+import Map from "@/components/searchPage/Map";
 
 export default function SearchPage() {
   return <Map />;
