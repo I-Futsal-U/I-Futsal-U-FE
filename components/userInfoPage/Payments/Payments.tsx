@@ -1,5 +1,5 @@
+import PaymentsItem from "../../common/Item/PaymentsItem/PaymentsItem";
 import Layout from "../layout";
-import PaymentsItem from "./PaymentsItem";
 
 function Payments() {
   return (

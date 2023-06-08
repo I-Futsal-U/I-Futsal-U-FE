@@ -1,11 +1,13 @@
-import ReviewDetail from "@/components/reviewDetailPage/ReviewDetail";
+import PeriodButtons from "@/components/common/PeriodButtons/PeriodButtons";
+import Result from "@/components/reviewDetailPage/Result";
 
-function ReviewPage() {
+function ReviewDetailPage() {
   return (
-    <div>
-      <ReviewDetail />
-    </div>
+    <>
+      <PeriodButtons />
+      <Result />
+    </>
   );
 }
 
-export default ReviewPage;
+export default ReviewDetailPage;

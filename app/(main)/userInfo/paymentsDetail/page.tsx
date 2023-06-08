@@ -1,5 +1,13 @@
-function PaymentsPage() {
-  return <div>Payments detail- 결제내역</div>;
+import PeriodButtons from "@/components/common/PeriodButtons/PeriodButtons";
+import Result from "@/components/paymentsDetailPage/Result";
+
+function PaymentsDetailPage() {
+  return (
+    <>
+      <PeriodButtons />
+      <Result />
+    </>
+  );
 }
 
-export default PaymentsPage;
+export default PaymentsDetailPage;
