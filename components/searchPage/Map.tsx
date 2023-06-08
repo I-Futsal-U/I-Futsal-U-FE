@@ -4,7 +4,7 @@ import { IoIosArrowBack } from "@react-icons/all-files/io/IoIosArrowBack";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { useState } from "react";
 
-import useKakaoMap from "@/util/useKakaoMap";
+import useKakaoMap from "@/components/searchPage/hooks/useKakaoMap";
 import useViewportTracker from "@/util/useViewportTracker";
 
 import FieldDetail from "./FieldDetail";

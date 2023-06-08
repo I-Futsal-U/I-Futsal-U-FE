@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
-import filtereddata from "../components/common/SearchPage/filtereddata.json";
+import filtereddata from "../filtereddata.json";
 
 interface Marker {
   position: { La: number; Ma: number };

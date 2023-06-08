@@ -15,10 +15,10 @@ export default function HeaderInputBar() {
   };
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    router.push("/search");
     queryClient.setQueryData(["inputValue"], input);
     setInput("");
     await queryClient.refetchQueries(["inputValue"]);
-    router.push("/searchpage");
   };
 
   return (
