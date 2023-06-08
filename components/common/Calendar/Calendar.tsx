@@ -23,6 +23,7 @@ function Calendar() {
   useDateParams(date);
 
   const goToPrevMonth = () => {
+    // 지난 달로 이동
     const prevDate = new Date(date.year, date.month - 1, date.day);
 
     const newDate: DateType = {
@@ -35,6 +36,7 @@ function Calendar() {
   };
 
   const goToNextMonth = () => {
+    // 다음 달로 이동
     const nextDate = new Date(date.year, date.month + 1, date.day);
 
     const newDate = {
@@ -47,6 +49,7 @@ function Calendar() {
   };
 
   const handleDate = (day: number) => {
+    // 날짜 지정
     const targetDate = new Date(date.year, date.month, day);
 
     const newDate = {
@@ -65,7 +68,7 @@ function Calendar() {
     >
       <Buttons goToPrevMonth={goToPrevMonth} goToNextMonth={goToNextMonth} />
       <Header date={date} />
-      <Dates totalDays={totalDays} handleDate={handleDate} date={date} />
+      <Dates totalDays={totalDays} handleDate={handleDate} />
     </section>
   );
 }
