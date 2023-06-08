@@ -1,5 +1,5 @@
+import ReviewItem from "../../common/Item/ReviewItem/ReviewItem";
 import Layout from "../layout";
-import ReviewItem from "./ReviewItem";
 
 function Review() {
   return (

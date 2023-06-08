@@ -1,7 +1,4 @@
-type LevelInfo = {
-  level: "general" | "amatuer" | "semi-pro";
-  description: string;
-};
+import type { LevelInfo } from "@/types/level";
 
 export const General: LevelInfo = {
   level: "general",

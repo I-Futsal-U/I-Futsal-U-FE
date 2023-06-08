@@ -1,4 +1,4 @@
-import MatchItem from "@/components/common/MatchItem/MatchItem";
+import MatchItem from "@/components/common/Item/MatchItem/MatchItem";
 
 import Layout from "../layout";
 

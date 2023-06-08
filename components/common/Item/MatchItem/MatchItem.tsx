@@ -10,14 +10,14 @@ function MatchItem({ children }: MatchItemProps) {
         <span className="text-base font-extrabold overflow-hidden whitespace-nowrap text-ellipsis">
           서울 피치푸마목동(홈플러스 목동점) 1구장
         </span>
-        <div className="flex text-xs overflow-hidden">
+        <div className="flex text-xs overflow-hidden whitespace-nowrap min-w-full">
           <span className="after:content-['·'] after:mx-0.5 sm:after:mx-1">
             남녀모두
           </span>
-          <span className="after:content-['·'] after:mx-0.5 sm:after:mx-1">
+          <span className="hidden sm:inline after:content-['·'] after:mx-0.5 sm:after:mx-1">
             6vs6
           </span>
-          <span className="after:content-['·'] after:mx-0.5 sm:after:mx-1">
+          <span className="hidden sm:inline after:content-['·'] after:mx-0.5 sm:after:mx-1">
             3파전
           </span>
           <span>모든 레벨</span>

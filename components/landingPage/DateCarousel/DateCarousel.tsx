@@ -9,8 +9,10 @@ import { useEffect, useRef, useState } from "react";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { DAYS } from "@/constant/days";
+
 import DateItem from "./DateItem";
-import { DAYS, useCreateDates } from "./hooks/useCreateDates";
+import { useCreateDates } from "./hooks/useCreateDates";
 // date.getDate() - 오늘 날짜
 // date.getMonth() - 이번달 (0 ~ 11)
 // date.getDay() - 오늘 요일 (0 ~ 6)

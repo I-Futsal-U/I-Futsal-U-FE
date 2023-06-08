@@ -1,7 +1,7 @@
+import Result from "@/components/assignedDetailPage/Result";
 import Calendar from "@/components/common/Calendar/Calendar";
-import Result from "@/components/reservationDetailPage/Result";
 
-function ReservationDetailPage() {
+function AssignedMatchPage() {
   return (
     <div className="flex flex-col md:flex-row gap-3">
       <Calendar />
@@ -10,4 +10,4 @@ function ReservationDetailPage() {
   );
 }
 
-export default ReservationDetailPage;
+export default AssignedMatchPage;
