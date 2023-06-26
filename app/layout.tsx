@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 
+import Script from "next/script";
+
 import ReactQuery from "@/components/provider/ReactQuery";
 
 export const metadata = {
@@ -16,6 +18,7 @@ export default function RootLayout({
     <html lang="ko-KR">
       <body>
         <ReactQuery>{children}</ReactQuery>
+        <Script src="https://cdn.iamport.kr/v1/iamport.js" />
       </body>
     </html>
   );
