@@ -1,30 +1,31 @@
-// src/mocks/handlers.js
 import { rest } from "msw";
 
 export const handlers = [
-  /**
-   * example *
-   rest.post('/login', (req, res, ctx) => {
-    // Persist user's authentication in the session
-    sessionStorage.setItem('is-authenticated', 'true')
+  rest.get("https://example.com/products/:productId", (req, res, ctx) => {
+    const { productId } = req.params;
 
-    return res(
-      // Respond with a 200 status code
-      ctx.status(200),
-    )
+    const products = [
+      {
+        id: "22",
+        name: "banana",
+        quantity: 3,
+      },
+    ];
+
+    const product = products.filter((product) => product.id === productId)[0];
+
+    return res(ctx.json(product));
   }),
-  rest.get('/user', (req, res, ctx) => {
-    // Check if the user is authenticated in this session
-    const isAuthenticated = sessionStorage.getItem('is-authenticated')
 
-    if (!isAuthenticated) {
-      // If not authenticated, respond with a 403 error
-      return res(
-        ctx.status(403),
-        ctx.json({
-          errorMessage: 'Not authorized',
-        }),
-      )
-    }
-   */
+  rest.get("https://example.com/reviews", (req, res, ctx) => {
+    return res(
+      ctx.json([
+        {
+          id: "31",
+          author: "길동쓰",
+          content: "맛있는 바나나 👍 🍌",
+        },
+      ]),
+    );
+  }),
 ];

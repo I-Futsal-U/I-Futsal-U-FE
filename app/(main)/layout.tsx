@@ -1,4 +1,5 @@
 import Header from "@/components/common/Header/Header";
+import initMockAPI from "@/mocks";
 export default async function RootLayout({
   children,
   landing,
@@ -6,6 +7,9 @@ export default async function RootLayout({
   children: React.ReactNode;
   landing: React.ReactNode;
 }) {
+  if (process.env.NODE_ENV === "test") {
+    initMockAPI();
+  }
   return (
     <>
       <Header />
