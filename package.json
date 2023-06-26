@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "eslint --fix",
     "test": "jest --coverage --transformIgnorePatterns \"node_modules/(?!swiper)/\"",
-    "local": "jest --coverage --watch --transformIgnorePatterns \"node_modules/(?!swiper)/\""
+    "test:local": "jest --coverage --watch --transformIgnorePatterns \"node_modules/(?!swiper)/\""
+    
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^13.4.2",
