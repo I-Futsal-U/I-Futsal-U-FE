@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint --fix",
+    "eslint": "eslint",
     "test": "jest --coverage --transformIgnorePatterns \"node_modules/(?!swiper)/\"",
     "test:local": "jest --coverage --watch --transformIgnorePatterns \"node_modules/(?!swiper)/\""
   },
