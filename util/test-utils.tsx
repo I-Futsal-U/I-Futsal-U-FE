@@ -14,12 +14,7 @@ const queryTestClient = new QueryClient({
   logger: {
     log: console.log,
     warn: console.warn,
-    error:
-      process.env.NODE_ENV === "test"
-        ? () => {
-            return null;
-          }
-        : console.error,
+    error: process.env.NODE_ENV === "test" ? () => null : console.error,
   },
 });
 
@@ -34,8 +29,7 @@ function ReactQueryProvider({ children }: ReactQueryProviderProps) {
 const renderWithQueryClient = (
   ui: React.ReactElement,
   options?: Omit<RenderOptions, "wrapper">,
-) => {
-  return render(ui, { wrapper: ReactQueryProvider, ...options });
-};
+) => render(ui, { wrapper: ReactQueryProvider, ...options });
 
+// eslint-disable-next-line import/prefer-default-export
 export { renderWithQueryClient as render };

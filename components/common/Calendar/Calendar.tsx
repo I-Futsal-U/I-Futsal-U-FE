@@ -7,8 +7,8 @@ import type { DateType, MONTH_TYPE } from "@/types/days";
 import Buttons from "./Buttons";
 import Dates from "./Dates";
 import Header from "./Header";
-import { useDateParams } from "./hooks/useDateParams";
-import { useDaysOfMonth } from "./hooks/useDaysOfMonth";
+import useDateParams from "./hooks/useDateParams";
+import useDaysOfMonth from "./hooks/useDaysOfMonth";
 
 // 각 달의 일수 구하기 => new Date(YYYY, M, 0).getDate()
 

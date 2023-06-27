@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { FaStar } from "@react-icons/all-files/fa/FaStar";
 import { FaStarHalf } from "@react-icons/all-files/fa/FaStarHalf";
 

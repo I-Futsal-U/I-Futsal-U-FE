@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import type { DAY_TYPE, MONTH_TYPE, TodayType } from "@/types/days";
 
-export const useCreateDates = (weeks: number) => {
+export default function useCreateDates(weeks: number) {
   const [days, setDays] = useState<TodayType[]>();
 
   useEffect(() => {
@@ -26,4 +26,4 @@ export const useCreateDates = (weeks: number) => {
   }, []);
 
   return [days];
-};
+}

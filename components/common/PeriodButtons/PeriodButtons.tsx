@@ -12,7 +12,7 @@ export default function PeriodButtons() {
           <Button key={`${e} days`} value={`${e}일`} period={`${e}days`} />
         ))}
         {months.map((e) => (
-          <Button key={`${e} months`} value={`${e}개월`} period={`{e}months`} />
+          <Button key={`${e} months`} value={`${e}개월`} period="{e}months" />
         ))}
       </div>
     </Layout>

@@ -17,8 +17,8 @@ export const handlers = [
     return res(ctx.json(product));
   }),
 
-  rest.get("https://example.com/reviews", (req, res, ctx) => {
-    return res(
+  rest.get("https://example.com/reviews", (req, res, ctx) =>
+    res(
       ctx.json([
         {
           id: "31",
@@ -26,6 +26,6 @@ export const handlers = [
           content: "맛있는 바나나 👍 🍌",
         },
       ]),
-    );
-  }),
+    ),
+  ),
 ];

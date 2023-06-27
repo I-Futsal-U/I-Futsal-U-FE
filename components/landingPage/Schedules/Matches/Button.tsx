@@ -23,6 +23,7 @@ export default function Button() {
     <button
       className={`w-28 h-10 px-1 py-2 text-sm  ${CLOSED.className} rounded-xl font-extrabold ml-auto mr-2`}
       disabled={CLOSED.disabled}
+      type="button"
     >
       {CLOSED.text}
     </button>

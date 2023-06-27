@@ -1,4 +1,7 @@
+/* eslint-disable no-param-reassign */
+
 "use client";
+
 import "swiper/swiper.min.css";
 
 import { FaAngleLeft } from "@react-icons/all-files/fa/FaAngleLeft";
@@ -12,7 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import MainItem from "./MainItem";
 
-export default function MainCarousel() {
+function MainCarousel() {
   const navigationNextRef = useRef<HTMLButtonElement | null>(null);
   const navigationPrevRef = useRef<HTMLButtonElement | null>(null);
 
@@ -70,6 +73,7 @@ export default function MainCarousel() {
           ref={navigationPrevRef}
           data-testid="prevBtn"
           className="hidden lg:block absolute top-1/2 -left-12 -translate-y-1/2 bg-gray-400/50 w-10 h-10 rounded-full z-10"
+          type="button"
         >
           <FaAngleLeft className="text-3xl text-stone-50 pl-1.5" />
         </button>
@@ -77,6 +81,7 @@ export default function MainCarousel() {
           ref={navigationNextRef}
           data-testid="nextBtn"
           className="hidden lg:block absolute top-1/2 -right-12 -translate-y-1/2 bg-gray-400/50 w-10 h-10 rounded-full z-10"
+          type="button"
         >
           <FaAngleRight className="text-3xl text-stone-50 pl-3" />
         </button>
@@ -84,3 +89,5 @@ export default function MainCarousel() {
     </section>
   );
 }
+
+export default MainCarousel;

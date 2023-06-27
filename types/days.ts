@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export type MONTH_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
 export type DAY_TYPE = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 

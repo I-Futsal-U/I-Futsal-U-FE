@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import type { DateType } from "@/types/days";
 
 // year, month, day를 queryString에 추가해줍니다.
-export const useDateParams = (date: DateType) => {
+export default function useDateParams(date: DateType) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -14,10 +14,10 @@ export const useDateParams = (date: DateType) => {
     params.append("month", `${newDate.month}`);
     params.append("day", `${newDate.day}`);
 
-    router.push(pathname + "?" + params.toString());
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   useEffect(() => {
     setDateParams(date);
   }, [date]);
-};
+}

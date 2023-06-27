@@ -9,7 +9,7 @@ interface DatesProps {
   handleDate: (e: number) => void;
 }
 
-export default function Dates({ totalDays, handleDate }: DatesProps) {
+function Dates({ totalDays, handleDate }: DatesProps) {
   const searchParams = useSearchParams();
   const checkDate = (e: number): boolean => {
     const day = searchParams.get("day");
@@ -51,16 +51,15 @@ export default function Dates({ totalDays, handleDate }: DatesProps) {
       ))}
       {totalDays.map((e, i) => (
         <button
-          key={`${i} undefined`}
+          // eslint-disable-next-line react/no-array-index-key
+          key={`${i} 일`}
           type="button"
           disabled={e === 0}
           className={`h-16 font-extrabold ${i % 7 === 0 ? "text-red-500" : ""}`}
           onClick={() => handleDate(e)}
         >
           {isToday(e) && (
-            <span
-              className={`relative z-1 -top-3 block h-1 font-extrabold leading-none`}
-            >
+            <span className="relative z-1 -top-3 block h-1 font-extrabold leading-none">
               <BsDot className="mx-auto text-green-400 text-3xl" />
             </span>
           )}
@@ -76,3 +75,5 @@ export default function Dates({ totalDays, handleDate }: DatesProps) {
     </div>
   );
 }
+
+export default Dates;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { GrClose } from "@react-icons/all-files/gr/GrClose";
 import { useRouter } from "next/navigation";
 
