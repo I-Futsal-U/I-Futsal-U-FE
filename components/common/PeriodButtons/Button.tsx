@@ -3,7 +3,7 @@ interface ButtonProps {
   period: string;
 }
 
-function Button({ value, period }: ButtonProps) {
+export default function Button({ value, period }: ButtonProps) {
   return (
     <button
       type="button"
@@ -14,5 +14,3 @@ function Button({ value, period }: ButtonProps) {
     </button>
   );
 }
-
-export default Button;

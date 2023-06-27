@@ -1,7 +1,7 @@
 import PeriodButtons from "@/components/common/PeriodButtons/PeriodButtons";
 import Result from "@/components/paymentsDetailPage/Result";
 
-function PaymentsDetailPage() {
+export default function PaymentsDetailPage() {
   return (
     <>
       <PeriodButtons />
@@ -9,5 +9,3 @@ function PaymentsDetailPage() {
     </>
   );
 }
-
-export default PaymentsDetailPage;

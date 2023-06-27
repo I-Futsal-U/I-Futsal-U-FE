@@ -4,7 +4,7 @@ interface HeaderProps {
   date: DateType;
 }
 
-function Header({ date }: HeaderProps) {
+export default function Header({ date }: HeaderProps) {
   return (
     <div
       className="col-span-6 text-center font-extrabold text-2xl"
@@ -15,5 +15,3 @@ function Header({ date }: HeaderProps) {
     </div>
   );
 }
-
-export default Header;

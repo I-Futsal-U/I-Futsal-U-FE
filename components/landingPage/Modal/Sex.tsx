@@ -1,4 +1,4 @@
-function Sex() {
+export default function Sex() {
   return (
     <>
       <h2 className="text-2xl font-extrabold mb-2">성별</h2>
@@ -34,5 +34,3 @@ function Sex() {
     </>
   );
 }
-
-export default Sex;

@@ -17,7 +17,7 @@ import { useCreateDates } from "./hooks/useCreateDates";
 // date.getMonth() - 이번달 (0 ~ 11)
 // date.getDay() - 오늘 요일 (0 ~ 6)
 
-function DateCarousel() {
+export default function DateCarousel() {
   const [loading, setLoading] = useState<boolean>(false);
   const [days] = useCreateDates(2); // 매개변수 weeks: `오늘`부터 {weeks}주 뒤까지의 날짜 정보 생성
 
@@ -113,5 +113,3 @@ function DateCarousel() {
     </div>
   );
 }
-
-export default DateCarousel;

@@ -3,7 +3,7 @@ interface LayoutProps {
   title: string;
 }
 
-function Layout({ children, title }: LayoutProps) {
+export default function Layout({ children, title }: LayoutProps) {
   return (
     <section className="flex-grow border-2 border-solid rounded-xl p-3 mb-5">
       <h2 className="mb-3 text-xl font-extrabold">{title}</h2>
@@ -11,5 +11,3 @@ function Layout({ children, title }: LayoutProps) {
     </section>
   );
 }
-
-export default Layout;

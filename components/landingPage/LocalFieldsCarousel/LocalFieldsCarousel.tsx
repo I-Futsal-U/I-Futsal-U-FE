@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import LocalFieldsItem from "./LocalFieldsItem";
 import items from "./mockData.json";
 
-function LocalFieldsCarousel() {
+export default function LocalFieldsCarousel() {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -118,7 +118,3 @@ function LocalFieldsCarousel() {
     </section>
   );
 }
-
-export default LocalFieldsCarousel;
-
-/**/

@@ -1,7 +1,7 @@
 import Button from "./Button";
 import Layout from "./layout";
 
-function PeriodButtons() {
+export default function PeriodButtons() {
   const days = [1, 3, 7];
   const months = [1, 3, 6, 12];
 
@@ -18,5 +18,3 @@ function PeriodButtons() {
     </Layout>
   );
 }
-
-export default PeriodButtons;

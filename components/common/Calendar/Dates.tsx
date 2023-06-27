@@ -9,7 +9,7 @@ interface DatesProps {
   handleDate: (e: number) => void;
 }
 
-function Dates({ totalDays, handleDate }: DatesProps) {
+export default function Dates({ totalDays, handleDate }: DatesProps) {
   const searchParams = useSearchParams();
   const checkDate = (e: number): boolean => {
     const day = searchParams.get("day");
@@ -76,5 +76,3 @@ function Dates({ totalDays, handleDate }: DatesProps) {
     </div>
   );
 }
-
-export default Dates;

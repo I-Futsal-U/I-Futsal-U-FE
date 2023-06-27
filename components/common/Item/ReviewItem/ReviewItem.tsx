@@ -1,7 +1,7 @@
 import { FaStar } from "@react-icons/all-files/fa/FaStar";
 import { FaStarHalf } from "@react-icons/all-files/fa/FaStarHalf";
 
-function ReviewItem() {
+export default function ReviewItem() {
   const rating = 3.5;
   const integer = Math.floor(rating);
   const float = rating - integer;
@@ -21,5 +21,3 @@ function ReviewItem() {
     </div>
   );
 }
-
-export default ReviewItem;

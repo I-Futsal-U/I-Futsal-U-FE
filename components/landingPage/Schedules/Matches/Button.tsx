@@ -1,6 +1,6 @@
 import type { MatchButtonStyleType } from "@/types/button";
 
-function Button() {
+export default function Button() {
   const APPLICABLE: MatchButtonStyleType = {
     className: "bg-blue-400 text-white",
     text: "신청가능",
@@ -28,5 +28,3 @@ function Button() {
     </button>
   );
 }
-
-export default Button;

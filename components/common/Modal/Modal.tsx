@@ -5,7 +5,7 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-function Modal({ children }: ModalProps) {
+export default function Modal({ children }: ModalProps) {
   const router = useRouter();
 
   const closeModal = (e: React.MouseEvent<HTMLElement>) => {
@@ -44,5 +44,3 @@ function Modal({ children }: ModalProps) {
     </div>
   );
 }
-
-export default Modal;

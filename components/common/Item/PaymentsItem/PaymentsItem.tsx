@@ -1,4 +1,4 @@
-function PaymentsItem() {
+export default function PaymentsItem() {
   return (
     <div className="flex gap-10">
       <span>날짜</span>
@@ -7,5 +7,3 @@ function PaymentsItem() {
     </div>
   );
 }
-
-export default PaymentsItem;

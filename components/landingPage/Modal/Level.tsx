@@ -1,4 +1,4 @@
-function Level() {
+export default function Level() {
   return (
     <>
       <h2 className="text-2xl font-extrabold mb-2">레벨</h2>
@@ -34,5 +34,3 @@ function Level() {
     </>
   );
 }
-
-export default Level;

@@ -5,7 +5,7 @@ interface MainItemProps {
   text: string;
 }
 
-function MainItem({ icon, text }: MainItemProps) {
+export default function MainItem({ icon, text }: MainItemProps) {
   return (
     <>
       <h2 className="absolute top-1/2 w-full text-center -translate-y-1/2 text-stone-50">
@@ -17,5 +17,3 @@ function MainItem({ icon, text }: MainItemProps) {
     </>
   );
 }
-
-export default MainItem;

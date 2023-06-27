@@ -1,7 +1,7 @@
 import PaymentsItem from "../common/Item/PaymentsItem/PaymentsItem";
 import Layout from "../common/PeriodButtons/layout";
 
-function Result() {
+export default function Result() {
   return (
     <Layout title="검색 결과">
       <PaymentsItem />
@@ -9,4 +9,3 @@ function Result() {
     </Layout>
   );
 }
-export default Result;

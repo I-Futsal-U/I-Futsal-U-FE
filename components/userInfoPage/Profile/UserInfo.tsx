@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import userImg from "../../../public/images/user-profile-default.png";
 
-function UserInfo() {
+export default function UserInfo() {
   return (
     <div className="relative w-24 h-24 mx-auto text-center">
       <div className="relative w-16 h-16 rounded-full overflow-hidden mx-auto my-1 border-2 border-solid">
@@ -16,5 +16,3 @@ function UserInfo() {
     </div>
   );
 }
-
-export default UserInfo;

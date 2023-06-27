@@ -2,7 +2,7 @@ interface DateItemProps {
   date: number;
   day: string;
 }
-function DateItem({ date, day }: DateItemProps) {
+export default function DateItem({ date, day }: DateItemProps) {
   return (
     <button
       type="button"
@@ -15,5 +15,3 @@ function DateItem({ date, day }: DateItemProps) {
     </button>
   );
 }
-
-export default DateItem;

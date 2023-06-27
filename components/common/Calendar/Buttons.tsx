@@ -8,7 +8,7 @@ interface ButtonProps {
   goToNextMonth: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-function Buttons({ goToPrevMonth, goToNextMonth }: ButtonProps) {
+export default function Buttons({ goToPrevMonth, goToNextMonth }: ButtonProps) {
   return (
     <div
       className="absolute top-5 right-2 lg:right-12 flex gap-1"
@@ -37,5 +37,3 @@ function Buttons({ goToPrevMonth, goToNextMonth }: ButtonProps) {
     </div>
   );
 }
-
-export default Buttons;

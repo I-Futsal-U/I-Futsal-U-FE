@@ -1,7 +1,7 @@
 import Cash from "./Cash";
 import UserInfo from "./UserInfo";
 
-function Profile() {
+export default function Profile() {
   return (
     <section className="w-full py-8 border-2 border-solid border-blue-300 rounded-2xl shadow-md">
       <UserInfo />
@@ -9,5 +9,3 @@ function Profile() {
     </section>
   );
 }
-
-export default Profile;

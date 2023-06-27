@@ -7,7 +7,7 @@ interface ButtonProps {
   href?: string;
 }
 
-function Button({ text, href = "/" }: ButtonProps) {
+export default function Button({ text, href = "/" }: ButtonProps) {
   const router = useRouter();
 
   const handleLink = (e: React.MouseEvent<HTMLElement>) => {
@@ -25,5 +25,3 @@ function Button({ text, href = "/" }: ButtonProps) {
     </button>
   );
 }
-
-export default Button;
