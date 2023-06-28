@@ -127,9 +127,7 @@ export default function useKakaoMap() {
             image: markerImage,
           });
 
-          const content =
-            "<div style='background-color:black; color:white; border-radius:10px; padding:6px; font-size:small;'>";
-          `${positionName}</div>`;
+          const content = `<div style='background-color:black; color:white; border-radius:10px; padding:6px; font-size:small;'>${positionName}</div>`;
           // 커스텀 오버레이가 표시될 위치입니다
           // eslint-disable-next-line @typescript-eslint/no-shadow
           const ps = new window.kakao.maps.LatLng(position.La, position.Ma);
