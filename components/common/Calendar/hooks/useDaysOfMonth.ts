@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import type { Dispatch, SetStateAction } from "react";
 import { useEffect, useState } from "react";
 
@@ -10,9 +11,9 @@ import type { DateType } from "@/types/days";
  * 6월 1일의 이전 날짜(일 ~ 수)는 0으로 채운다.
  * [0, 0, 0, 0, 1 , 2, 3, ... , 30]
  */
-export const useDaysOfMonth = (
+export default function useDaysOfMonth(
   date: DateType,
-): [number[], Dispatch<SetStateAction<number[]>>] => {
+): [number[], Dispatch<SetStateAction<number[]>>] {
   const [totalDays, setTotalDays] = useState<number[]>([]); // 특정 달의 모든 날짜를 담을 배열 ex) 5월 => 1 ~ 31
 
   useEffect(() => {
@@ -35,4 +36,4 @@ export const useDaysOfMonth = (
   }, [date]);
 
   return [totalDays, setTotalDays];
-};
+}

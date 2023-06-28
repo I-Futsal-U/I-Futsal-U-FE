@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 "use client";
 
 import "swiper/swiper.min.css";
@@ -12,7 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { DAYS } from "@/constant/days";
 
 import DateItem from "./DateItem";
-import { useCreateDates } from "./hooks/useCreateDates";
+import useCreateDates from "./hooks/useCreateDates";
 // date.getDate() - 오늘 날짜
 // date.getMonth() - 이번달 (0 ~ 11)
 // date.getDay() - 오늘 요일 (0 ~ 6)
@@ -48,7 +50,7 @@ function DateCarousel() {
               spaceBetween={5}
               breakpoints={{
                 375: {
-                  //iPhone SE
+                  // iPhone SE
                   slidesPerView: 4,
                   spaceBetween: 8,
                 },
@@ -87,7 +89,8 @@ function DateCarousel() {
               modules={[Navigation]}
             >
               {days &&
-                days.map((e, i) => (
+                days.map((e: any, i: number) => (
+                  // eslint-disable-next-line react/no-array-index-key
                   <SwiperSlide key={i} aria-label="carousel slide">
                     <DateItem date={e.date} day={DAYS[e.day]} />
                   </SwiperSlide>
@@ -97,6 +100,7 @@ function DateCarousel() {
               ref={navigationPrevRef}
               data-testid="prevBtn"
               className="absolute top-1/2 -left-8 -translate-y-1/2 bg-gray-400/50 w-7 h-7 rounded-full z-10 disabled:opacity-50"
+              type="button"
             >
               <FaAngleLeft className="text-2xl text-stone-50 pl-1" />
             </button>
@@ -104,6 +108,7 @@ function DateCarousel() {
               ref={navigationNextRef}
               data-testid="nextBtn"
               className="absolute top-1/2 -right-8 -translate-y-1/2 bg-gray-400/50 w-7 h-7 rounded-full z-10 disabled:opacity-50"
+              type="button"
             >
               <FaAngleRight className="text-2xl text-stone-50 pl-1.5" />
             </button>

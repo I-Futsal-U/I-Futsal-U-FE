@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 "use client";
 
 import { IoIosArrowBack } from "@react-icons/all-files/io/IoIosArrowBack";

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
@@ -62,11 +64,9 @@ export default function useKakaoMap() {
           ) {
             filteredData = filtereddata.DATA;
           } else {
-            filteredData = filtereddata.DATA.filter((item) => {
-              return item.address_name.includes(filtered) === true
-                ? true
-                : false;
-            });
+            filteredData = filtereddata.DATA.filter((item) =>
+              item.address_name.includes(filtered) === true ? true : false,
+            );
           }
 
           if (
@@ -84,10 +84,8 @@ export default function useKakaoMap() {
             filteredData.length === 0
           ) {
             alert("검색 결과가 존재하지 않습니다.");
-            return;
           } else if (status === window.kakao.maps.services.Status.ERROR) {
             alert("검색 결과 중 오류가 발생했습니다.");
-            return;
           }
         }
 
@@ -101,10 +99,10 @@ export default function useKakaoMap() {
           for (let i = 0; i < places.length; i++) {
             // 마커를 생성하고 지도에 표시합니다
             const placePosition = new window.kakao.maps.LatLng(
-                places[i].y,
-                places[i].x,
-              ),
-              marker = addMarker(placePosition, places[i].place_name);
+              places[i].y,
+              places[i].x,
+            );
+            const marker = addMarker(placePosition, places[i].place_name);
 
             // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
             // LatLngBounds 객체에 좌표를 추가합니다
@@ -118,29 +116,27 @@ export default function useKakaoMap() {
         // 마커를 생성하고 지우는 함수들입니다.
         function addMarker(position: Marker["position"], positionName: string) {
           const imageSrc =
-              "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fccrn3v%2FbtshAwbDjZR%2F6ScWUxSRT2vxwO1kMpiGT1%2Fimg.png",
-            imageSize = new window.kakao.maps.Size(85, 90), // 마커 이미지의 크기
-            markerImage = new window.kakao.maps.MarkerImage(
-              imageSrc,
-              imageSize,
-            ),
-            marker = new window.kakao.maps.Marker({
-              position: position, // 마커의 위치
-              image: markerImage,
-            });
+            "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fccrn3v%2FbtshAwbDjZR%2F6ScWUxSRT2vxwO1kMpiGT1%2Fimg.png";
+          const imageSize = new window.kakao.maps.Size(85, 90); // 마커 이미지의 크기
+          const markerImage = new window.kakao.maps.MarkerImage(
+            imageSrc,
+            imageSize,
+          );
+          const marker = new window.kakao.maps.Marker({
+            position, // 마커의 위치
+            image: markerImage,
+          });
 
-          const content =
-            "<div style='background-color:black; color:white; border-radius:10px; padding:6px; font-size:small;'>" +
-            positionName +
-            "</div>";
+          const content = `<div style='background-color:black; color:white; border-radius:10px; padding:6px; font-size:small;'>${positionName}</div>`;
           // 커스텀 오버레이가 표시될 위치입니다
+          // eslint-disable-next-line @typescript-eslint/no-shadow
           const ps = new window.kakao.maps.LatLng(position.La, position.Ma);
 
           // 커스텀 오버레이를 생성합니다
           const customOverlay = new window.kakao.maps.CustomOverlay({
-            map: map,
-            position: position,
-            content: content,
+            map,
+            position,
+            content,
             yAnchor: 0.6,
           });
 

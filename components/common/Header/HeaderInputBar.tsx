@@ -22,24 +22,25 @@ export default function HeaderInputBar() {
   };
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-row items-center bg-black h-1/2 w-2/3 md:w-1/3 rounded-full mr-8 md:mr-0 "
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-row items-center bg-black h-1/2 w-2/3 md:w-1/3 rounded-full mr-8 md:mr-0 "
+    >
+      <div className="w-11/12">
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="지역, 구장으로 찾기"
+          className="bg-black text-white w-11/12 ml-5 caret-blue-800 outline-none border-none"
+        />
+      </div>
+      <button
+        className="text-white mr-6 text-base md:text-lg  hover:animate-ping"
+        type="button"
       >
-        <div className="w-11/12">
-          <input
-            type="text"
-            value={input}
-            onChange={handleInputChange}
-            placeholder="지역, 구장으로 찾기"
-            className="bg-black text-white w-11/12 ml-5 caret-blue-800 outline-none	border-none"
-          ></input>
-        </div>
-        <button className="text-white mr-6 text-base md:text-lg  hover:animate-ping">
-          <CgSearch />
-        </button>
-      </form>
-    </>
+        <CgSearch />
+      </button>
+    </form>
   );
 }

@@ -40,6 +40,7 @@ https://main.d1x2u86w42jm2k.amplifyapp.com/
 | Feat     | 새로운 기능 추가                                             |
 | Fix      | 버그수정                                                     |
 | Comment  | 필요한 주석 추가 및 변경                                     |
+| Style    | 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우        |
 | Design   | CSS 등 사용자 UI 변경                                        |
 | Refactor | 코드 리팩토링                                                |
 | Chore    | 빌드 업무, 패키지 매니저, 패키지 관지라 구성, README 등 수정 |

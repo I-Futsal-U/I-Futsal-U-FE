@@ -1,6 +1,6 @@
 import type { MatchButtonStyleType } from "@/types/button";
 
-function Button() {
+export default function Button() {
   const APPLICABLE: MatchButtonStyleType = {
     className: "bg-blue-400 text-white",
     text: "신청가능",
@@ -23,10 +23,9 @@ function Button() {
     <button
       className={`w-28 h-10 px-1 py-2 text-sm  ${CLOSED.className} rounded-xl font-extrabold ml-auto mr-2`}
       disabled={CLOSED.disabled}
+      type="button"
     >
       {CLOSED.text}
     </button>
   );
 }
-
-export default Button;

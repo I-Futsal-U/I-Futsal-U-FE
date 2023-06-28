@@ -1,4 +1,7 @@
+/* eslint-disable no-param-reassign */
+
 "use client";
+
 import "swiper/swiper.min.css";
 
 import { FaAngleLeft } from "@react-icons/all-files/fa/FaAngleLeft";
@@ -102,6 +105,7 @@ function LocalFieldsCarousel() {
               ref={navigationPrevRef}
               data-testid="prevBtn"
               className="prev-button absolute top-1/3 -left-9 w-10 h-10 rounded-full z-10 disabled:opacity-50"
+              type="button"
             >
               <FaAngleLeft className="text-3xl text-gray-800 pl-1.5" />
             </button>
@@ -109,6 +113,7 @@ function LocalFieldsCarousel() {
               ref={navigationNextRef}
               data-testid="nextBtn"
               className="next-button absolute top-1/3 -right-9 w-10 h-10 rounded-full z-10 disabled:opacity-50"
+              type="button"
             >
               <FaAngleRight className="text-3xl text-gray-800 pl-3" />
             </button>

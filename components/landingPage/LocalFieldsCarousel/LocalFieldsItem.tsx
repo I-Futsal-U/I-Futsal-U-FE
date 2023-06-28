@@ -6,7 +6,11 @@ interface LocalFieldsItemProps {
   stars: number;
 }
 
-function LocalFieldsItem({ fieldName, img, stars }: LocalFieldsItemProps) {
+export default function LocalFieldsItem({
+  fieldName,
+  img,
+  stars,
+}: LocalFieldsItemProps) {
   return (
     <div className="flex-auto flex-col justify-center w-full h-full">
       <div className="relative w-full h-4/6 border-2 border-solid border-blue-500 rounded-2xl overflow-hidden">
@@ -21,5 +25,3 @@ function LocalFieldsItem({ fieldName, img, stars }: LocalFieldsItemProps) {
     </div>
   );
 }
-
-export default LocalFieldsItem;

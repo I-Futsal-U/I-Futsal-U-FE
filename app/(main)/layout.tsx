@@ -1,5 +1,6 @@
 import Header from "@/components/common/Header/Header";
 import initMockAPI from "@/mocks";
+
 export default async function RootLayout({
   children,
   landing,

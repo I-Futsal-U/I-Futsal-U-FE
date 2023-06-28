@@ -8,14 +8,18 @@
   "extends": [
     "next/core-web-vitals",
     "prettier",
+    "plugin:prettier/recommended",
     "eslint:recommended",
     "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "project": ["./tsconfig.json"],
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -28,6 +32,41 @@
   ],
   "rules": {
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/jsx-one-expression-per-line": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "linebreak-style": "off",
+    "operator-linebreak": "off",
+    "no-plusplus": "off",
+    "no-confusing-arrow": "off",
+    "no-unneeded-ternary": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": [
+      2,
+      {
+        "labelAttributes": ["div"]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelAttributes": ["label"]
+      }
+    ]
   }
 }

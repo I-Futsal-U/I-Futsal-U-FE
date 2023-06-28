@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { GrClose } from "@react-icons/all-files/gr/GrClose";
 import { useRouter } from "next/navigation";
 
@@ -5,7 +6,7 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-function Modal({ children }: ModalProps) {
+export default function Modal({ children }: ModalProps) {
   const router = useRouter();
 
   const closeModal = (e: React.MouseEvent<HTMLElement>) => {
@@ -44,5 +45,3 @@ function Modal({ children }: ModalProps) {
     </div>
   );
 }
-
-export default Modal;

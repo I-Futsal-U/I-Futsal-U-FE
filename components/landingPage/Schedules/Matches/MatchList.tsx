@@ -2,7 +2,7 @@ import MatchItem from "@/components/common/Item/MatchItem/MatchItem";
 
 import Button from "./Button";
 
-function MatchList() {
+export default function MatchList() {
   return (
     <div className="w-5/6 mx-auto">
       <MatchItem>
@@ -20,5 +20,3 @@ function MatchList() {
     </div>
   );
 }
-
-export default MatchList;

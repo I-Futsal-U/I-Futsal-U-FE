@@ -4,7 +4,7 @@ import Profile from "@/components/userInfoPage/Profile/Profile";
 import Reservation from "@/components/userInfoPage/Reservation/Reservation";
 import Review from "@/components/userInfoPage/Review/Review";
 
-function UserInfoPage() {
+export default function UserInfoPage() {
   return (
     <>
       <Profile />
@@ -15,5 +15,3 @@ function UserInfoPage() {
     </>
   );
 }
-
-export default UserInfoPage;

@@ -1,5 +1,3 @@
-function CatchAll() {
+export default function CatchAll() {
   return null;
 }
-
-export default CatchAll;

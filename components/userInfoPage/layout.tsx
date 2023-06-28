@@ -8,7 +8,7 @@ interface LayoutProps {
   href?: string;
 }
 
-function Layout({ children, title, href }: LayoutProps) {
+export default function Layout({ children, title, href }: LayoutProps) {
   return (
     <section className="w-full p-4 border-2 border-solid border-blue-300 rounded-2xl shadow-md my-8">
       <div className="flex">
@@ -23,5 +23,3 @@ function Layout({ children, title, href }: LayoutProps) {
     </section>
   );
 }
-
-export default Layout;

@@ -1,7 +1,7 @@
 import PeriodButtons from "@/components/common/PeriodButtons/PeriodButtons";
 import Result from "@/components/reviewDetailPage/Result";
 
-function ReviewDetailPage() {
+export default function ReviewDetailPage() {
   return (
     <>
       <PeriodButtons />
@@ -9,5 +9,3 @@ function ReviewDetailPage() {
     </>
   );
 }
-
-export default ReviewDetailPage;

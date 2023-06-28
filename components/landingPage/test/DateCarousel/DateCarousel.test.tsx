@@ -1,15 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import React, { useState } from "react";
 
-import DateCarousel from "../../DateCarousel/DateCarousel";
-import type {
-  DAY_TYPE,
-  MONTH_TYPE,
-} from "../../DateCarousel/hooks/useCreateDates";
+import type { DAY_TYPE, MONTH_TYPE } from "@/types/days";
 
-jest.mock("../../DateCarousel/hooks/useCreateDates", () => ({
-  ...jest.requireActual("../../DateCarousel/hooks/useCreateDates"),
-  useCreateDates: jest.fn().mockImplementation(() => {
+import DateCarousel from "../../DateCarousel/DateCarousel";
+
+jest.mock("../../DateCarousel/hooks/useCreateDates", () =>
+  jest.fn().mockImplementation(() => {
     const DATE = new Date();
     const dates = [];
 
@@ -27,7 +24,7 @@ jest.mock("../../DateCarousel/hooks/useCreateDates", () => ({
     }
     return [dates];
   }),
-}));
+);
 
 describe("DateCarousel Test", () => {
   afterAll(() => {
@@ -72,8 +69,8 @@ describe("DateCarousel Test", () => {
     expect(nextButton).toBeInTheDocument();
   });
 
-  /**추가되어야 할 기능 */
+  /** 추가되어야 할 기능 */
   test("날짜 클릭하면 해당 날짜 경기 정보를 가져온다", () => {
-    /**추가되어야 할 기능 */
+    /** 추가되어야 할 기능 */
   });
 });

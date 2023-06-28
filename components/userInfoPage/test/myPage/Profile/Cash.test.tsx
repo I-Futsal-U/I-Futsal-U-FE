@@ -1,5 +1,3 @@
-import Cash from "@/components/myPage/Profile/Cash";
-
 describe("Cash Component Test", () => {
   test("보유 캐시가 렌더링 된다", () => {
     // 추후 작성

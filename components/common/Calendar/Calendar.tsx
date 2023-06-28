@@ -7,12 +7,12 @@ import type { DateType, MONTH_TYPE } from "@/types/days";
 import Buttons from "./Buttons";
 import Dates from "./Dates";
 import Header from "./Header";
-import { useDateParams } from "./hooks/useDateParams";
-import { useDaysOfMonth } from "./hooks/useDaysOfMonth";
+import useDateParams from "./hooks/useDateParams";
+import useDaysOfMonth from "./hooks/useDaysOfMonth";
 
 // 각 달의 일수 구하기 => new Date(YYYY, M, 0).getDate()
 
-function Calendar() {
+export default function Calendar() {
   const [date, setDate] = useState<DateType>({
     year: new Date().getFullYear(),
     month: new Date().getMonth() as MONTH_TYPE, // 0 ~ 11월 이기 때문에
@@ -72,5 +72,3 @@ function Calendar() {
     </section>
   );
 }
-
-export default Calendar;

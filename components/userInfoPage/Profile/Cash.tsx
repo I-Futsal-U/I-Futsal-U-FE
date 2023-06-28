@@ -1,4 +1,4 @@
-function Cash() {
+export default function Cash() {
   return (
     <div className="flex items-center justify-center gap-16 md:gap-28 mt-8">
       <span className="text-base md:text-lg font-bold">캐시: 0원</span>
@@ -11,5 +11,3 @@ function Cash() {
     </div>
   );
 }
-
-export default Cash;

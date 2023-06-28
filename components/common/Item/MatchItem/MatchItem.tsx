@@ -2,7 +2,7 @@ interface MatchItemProps {
   children?: React.ReactNode;
 }
 
-function MatchItem({ children }: MatchItemProps) {
+export default function MatchItem({ children }: MatchItemProps) {
   return (
     <div className="flex py-3 items-center border-b border-solid border-gray-400">
       <span className="text-lg sm:text-xl px-2 sm:px-4">18:00</span>
@@ -27,5 +27,3 @@ function MatchItem({ children }: MatchItemProps) {
     </div>
   );
 }
-
-export default MatchItem;

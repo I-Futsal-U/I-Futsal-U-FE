@@ -1,7 +1,7 @@
 import Button from "./Button";
 import Layout from "./layout";
 
-function PeriodButtons() {
+export default function PeriodButtons() {
   const days = [1, 3, 7];
   const months = [1, 3, 6, 12];
 
@@ -12,11 +12,9 @@ function PeriodButtons() {
           <Button key={`${e} days`} value={`${e}일`} period={`${e}days`} />
         ))}
         {months.map((e) => (
-          <Button key={`${e} months`} value={`${e}개월`} period={`{e}months`} />
+          <Button key={`${e} months`} value={`${e}개월`} period="{e}months" />
         ))}
       </div>
     </Layout>
   );
 }
-
-export default PeriodButtons;

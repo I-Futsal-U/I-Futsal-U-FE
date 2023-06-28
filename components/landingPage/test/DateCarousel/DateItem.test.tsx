@@ -21,8 +21,8 @@ describe("DateItem Test", () => {
     expect(button).toHaveClass("hover:bg-blue-500 hover:text-white");
   });
 
-  /**나중에 추가되어야 할 기능 */
+  /** 나중에 추가되어야 할 기능 */
   test("선택된 날짜와 day가 같다면 배경은 파란색, text는 하얀색", () => {
-    /**나중에 추가되어야 할 기능 */
+    /** 나중에 추가되어야 할 기능 */
   });
 });

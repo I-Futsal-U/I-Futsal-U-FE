@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function SearchOptions() {
+export default function SearchOptions() {
   return (
     <div className="flex w-5/6 mx-auto mb-7">
       <Button text="성별" href="/sex" aria-label="search by gender" />
@@ -8,5 +8,3 @@ function SearchOptions() {
     </div>
   );
 }
-
-export default SearchOptions;
